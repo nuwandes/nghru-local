@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeEmumerationListFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.southasia.ghru.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/enumerationFragment"
+        android:name="org.southasia.ghru.ui.enumeration.EnumerationFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/enumeration_fragment"></fragment>
+
+    <fragment
+        android:id="@+id/sampleMangementFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.SampleMangementFragment"
+        android:label="SampleMangementFragment"
+        tools:layout="@layout/samplemangement_fragment"></fragment>
+
+
+    <fragment
+        android:id="@+id/homeEmumerationListFragment"
+        android:name="org.southasia.ghru.ui.homeenumerationlist.HomeEmumerationListFragment"
+        android:label="HomeEmumerationListFragment"
+        tools:layout="@layout/home_emumeration_list_fragment">
+        <action
+            android:id="@+id/action_homeEmumerationListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/userSettingFragment"
+        android:name="org.southasia.ghru.ui.usersetting.UserSettingFragment"
+        android:label="UserSettingFragment"
+        tools:layout="@layout/user_setting_fragment"></fragment>
+
+    <activity
+        android:id="@+id/bodyMeasurementsActivity"
+        android:name="org.southasia.ghru.BodyMeasurementsActivity"
+        android:label="BodyMeasurementsActivity"
+        tools:layout="@layout/body_measurements_activity"></activity>
+
+
+    <fragment
+        android:id="@+id/logoutDialogFragment"
+        android:name="org.southasia.ghru.ui.logout.LogoutDialogFragment"
+        android:label="LogoutDialogFragment"
+        tools:layout="@layout/logout_dialog_fragment"></fragment>
+
+    <fragment
+            android:id="@+id/dataManagementListFragment"
+            android:name="org.southasia.ghru.ui.datamanagement.DataManagementListFragment"
+            android:label="DataManagementListFragment"
+            tools:layout="@layout/data_management_fragment"></fragment>
+
+
+</navigation>

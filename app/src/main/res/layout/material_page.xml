@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E6F6FF"
+    android:clickable="false"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    app:navGraph="@navigation/body_measurements"
+    tools:context="org.southasia.ghru.BodyMeasurementsActivity"
+    tools:ignore="MergeRootFrame">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24"
+        app:srcCompat="@drawable/info_icon"
+        android:contentDescription="@string/imageview" />I
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:layout_marginBottom="@dimen/margin_24"
+        android:fontFamily="@font/roboto"
+        android:text="@string/bp_instructions_1"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+
+</LinearLayout>

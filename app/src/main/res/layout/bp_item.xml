@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="bloodPressure"
+            type="org.southasia.ghru.vo.BloodPressure" />
+
+        <variable
+            name="homeItem"
+            type="org.southasia.ghru.vo.HomeItem" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_32">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textViewSystolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto"
+                android:text="@{bloodPressure.systolic}"
+                android:textColor="#DE000000"
+                android:textSize="@dimen/default_font_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:fontFamily="@font/roboto"
+                android:text="/"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_font_size" />
+
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/textViewDiastolic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="@{bloodPressure.diastolic}"
+            android:textSize="@dimen/default_font_size" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="@{bloodPressure.pulse}"
+            android:textColor="#DE000000"
+            android:textSize="@dimen/default_font_size" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="@{bloodPressure.arm}"
+            android:textColor="#DE000000"
+            android:textSize="@dimen/default_font_size" />
+    </LinearLayout>
+
+
+</layout>

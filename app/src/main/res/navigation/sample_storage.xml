@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/PendingSampleListFragment">
+
+
+    <fragment
+        android:id="@+id/PendingSampleListFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.samplelist.PendingSampleListFragment"
+        android:label="PendingSampleListFragment"
+        tools:layout="@layout/storage_sample_list_fragment">
+
+
+        <action
+            android:id="@+id/action_PendingSampleListFragment_to_scanbarCodeFragment"
+            app:destination="@id/scanbarCodeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/scanbarCodeFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.scanbarcode.ScanBarcodeFragment"
+        android:label="scanBarcodeFragment"
+        tools:layout="@layout/scan_barcode_storage_fragment">
+
+        <action
+            android:id="@+id/action_scanFragment_to_storageFragment"
+            app:clearTask="true"
+            app:destination="@id/sampleStorageFragment"
+            app:launchSingleTop="true" />
+
+
+        <action
+            android:id="@+id/action_QRcodeScanFragment_to_TransferFragment"
+            app:clearTask="true"
+            app:destination="@id/TransferFragment" />
+        <action
+            android:id="@+id/action_scanbarCodeFragment_to_ManualEntryBarcodeFragment"
+            app:destination="@id/ManualEntryBarcodeFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/TransferFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.transfer.TransferFragment"
+        android:label="TransferFragment"
+        tools:layout="@layout/transfer_fragment">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/ManualEntryBarcodeFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.manualentry.ManualEntryBarcodeFragment"
+        android:label="scanQRFragment"
+        tools:layout="@layout/storage_manual_qrcode_entry_fragment">
+
+        <action
+            android:id="@+id/action_ManualEntryBarcodeFragment_to_TransferFragment"
+            app:destination="@id/TransferFragment" app:clearTask="true"/>
+    </fragment>
+
+
+</navigation>
+

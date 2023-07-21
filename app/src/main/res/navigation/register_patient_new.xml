@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerPatientNew"
+    app:startDestination="@+id/BasicDetailsFragmentNew">
+
+<!--    <fragment-->
+<!--        android:id="@+id/checkListFragmentSG"-->
+<!--        android:name="org.southasia.ghru.ui.registerpatient_sg.checklist.CheckListFragmentSG"-->
+<!--        android:label="CheckListFragmentSG"-->
+<!--        tools:layout="@layout/check_list_fragment_sg">-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_checkListFragment_to_explanationFragment_sg"-->
+<!--            app:clearTask="true"-->
+<!--            app:destination="@id/explanationFragmentSG" />-->
+
+<!--    </fragment>-->
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/explanationFragmentSG"-->
+<!--        android:name="org.southasia.ghru.ui.registerpatient_sg.explanation.ExplanationFragmentSG"-->
+<!--        android:label="ExplanationFragment"-->
+<!--        tools:layout="@layout/explanation_fragment_sg">-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_explanationFragmentSG_to_BasicDetailsFragmentSG"-->
+<!--            app:destination="@id/BasicDetailsFragmentSG" />-->
+
+<!--        <argument-->
+<!--            android:name="member"-->
+<!--            android:defaultValue="null" />-->
+
+<!--    </fragment>-->
+
+    <fragment
+        android:id="@+id/BasicDetailsFragmentNew"
+        android:name="org.southasia.ghru.ui.registerpatient_new.basicdetails.BasicDetailsFragmentNew"
+        android:label="BasicDetailsFragmentNew"
+        tools:layout="@layout/basic_details_fragment_new">
+
+        <argument
+            android:name="member"
+            android:defaultValue="null" />
+
+        <action
+            android:id="@+id/action_BasicDetailFragmentNew_to_reviewFragmentNew"
+            app:destination="@id/reviewFragmentNew" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/reviewFragmentNew"
+        android:name="org.southasia.ghru.ui.registerpatient_new.review.ReviewFragmentNew"
+        android:label="ReviewFragmentNew"
+        tools:layout="@layout/review_patient_fragment_new">
+
+        <argument
+            android:name="member"
+            android:defaultValue="null" />
+
+        <action
+            android:id="@+id/action_reviewFragmentNew_to_scanBarcodeFragmentNew"
+            app:destination="@id/scanBarcodeFragmentNew" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanBarcodeFragmentNew"
+        android:name="org.southasia.ghru.ui.registerpatient_new.scanbarcode.ScanBarcodeFragmentNew"
+        android:label="ScanBarcodeFragmentNew"
+        tools:layout="@layout/scan_barcode_patient_gen_fragment_new">
+        <action
+            android:id="@+id/action_scanBarcodeFragmentNew_to_confirmationFragmentNew"
+            app:clearTask="true"
+            app:destination="@id/confirmationFragmentNew" />
+        <action
+            android:id="@+id/action_scanBarcodeFragmentNew_to_scanBarcodeManualFragmentNew"
+            app:clearTask="true"
+            app:destination="@id/scanBarcodeManualFragmentNew" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanBarcodeManualFragmentNew"
+        android:name="org.southasia.ghru.ui.registerpatient_new.scanbarcode.manualentry.ManualEntryBarcodeFragmentNew"
+        android:label="ManualEntryBarcodeFragmentNew"
+        tools:layout="@layout/register_patient_barcode_manualentry_fragment_new">
+        <action
+            android:id="@+id/action_scanBarcodeManualFragmentNew_to_confirmationFragmentNew"
+            app:clearTask="true"
+            app:destination="@id/confirmationFragmentNew" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/confirmationFragmentNew"
+        android:name="org.southasia.ghru.ui.registerpatient_new.confirmation.ConfirmationFragmentNew"
+        android:label="ConfirmationFragmentNew"
+        tools:layout="@layout/confirmation_fragment_new">
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_scanBarcodeFragment"
+        app:destination="@id/scanBarcodeFragmentNew" />
+    <action
+        android:id="@+id/action_global_explanationFragment"
+        app:destination="@id/explanationFragment" app:clearTask="true"/>
+    <action
+        android:id="@+id/action_global_BasicDetailsFragmentNew"
+        app:destination="@id/BasicDetailsFragmentNew" />
+    <action
+        android:id="@+id/action_global_IdentificationFragment"
+        app:destination="@id/IdentificationFragment" />
+    <action
+        android:id="@+id/action_global_reviewFragment"
+        app:destination="@id/reviewFragmentNew"/>
+    <action
+        android:id="@+id/action_global_confirmationFragment"
+        app:destination="@id/confirmationFragmentNew" />
+
+    <action
+        android:id="@+id/action_global_scanBarcodeManualFragmentNew"
+        app:destination="@id/scanBarcodeManualFragmentNew" />
+
+</navigation>

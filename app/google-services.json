@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "469569511879",
+    "firebase_url": "https://nghru-5eda8.firebaseio.com",
+    "project_id": "nghru-5eda8",
+    "storage_bucket": "nghru-5eda8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469569511879:android:8ffbce1f748eeb45",
+        "android_client_info": {
+          "package_name": "org.southasia.ghru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469569511879-q8oohuetq0can9b6p20q3gjajvbjp5p4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.southasia.ghru",
+            "certificate_hash": "48690dd504dc9288a3d6793393cc09f36f208cc1"
+          }
+        },
+        {
+          "client_id": "469569511879-gsefi35utfm15qbfi9vlkoisfrasre64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.southasia.ghru",
+            "certificate_hash": "2bca55569821b85f993131796f92dc22fe69c056"
+          }
+        },
+        {
+          "client_id": "469569511879-0f0nughq3groe3f2jau6iadsjuposkvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEBqgV9-V6p8LJVkuv6e9xk2UKZElqCOE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469569511879-0f0nughq3groe3f2jau6iadsjuposkvf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

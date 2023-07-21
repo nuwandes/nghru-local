@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enumeration"
+    app:startDestination="@id/homeEnumerationFragment">
+
+    <fragment
+        android:id="@+id/homeEnumerationFragment"
+        android:name="org.southasia.ghru.ui.homeenumeration.HomeEnumerationFragment"
+        android:label="HomeEnumerationFragment"
+        tools:layout="@layout/home_enumeration_fragment">
+        <action
+            android:id="@+id/action_global_stationFragments4"
+            app:destination="@id/stationFragments" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/stationFragments"
+        android:name="org.southasia.ghru.ui.station.StationFragment"
+        android:label="StationFragment"
+        tools:layout="@layout/station_fragment">
+
+
+        <action
+            android:id="@+id/action_stationFragments_to_devicesFragment"
+            app:destination="@id/devicesFragment" />
+        <action
+            android:id="@+id/action_stationFragments_to_homeEnumerationFragment"
+            app:destination="@id/homeEnumerationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="org.southasia.ghru.ui.devices.DevicesFragment"
+        android:label="DevicesFragment"
+        tools:layout="@layout/devices_fragment">
+
+    </fragment>
+
+
+    <action
+        android:id="@+id/action_global_mainFragment"
+        app:destination="@id/stationFragments" />
+
+    <action
+        android:id="@+id/action_global_home"
+        app:destination="@id/homeEnumerationFragment" />
+
+    <action
+        android:id="@+id/action_global_device"
+        app:destination="@id/devicesFragment" />
+
+</navigation>

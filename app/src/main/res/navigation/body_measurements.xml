@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/measurements"
+    app:startDestination="@id/scanBarcodeFragment">
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_measurementsFragment"
+            app:clearTask="true"
+            app:destination="@id/BodyMeasurementHomeFragment"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_manualScanFragment"
+            app:destination="@id/manualScanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualScanFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.manualentry.ManualEntryBodyMeasurement"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/manual_entry_body_measurement_fragment">
+        <action
+            android:id="@+id/action_manualScanFragment_to_measurementsFragment"
+            app:clearTask="true"
+            app:destination="@id/BodyMeasurementHomeFragment"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/BodyMeasurementHomeFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.home.BodyMeasurementHomeFragment"
+        android:label="BodyMeasurementHomeFragment"
+        tools:layout="@layout/body_measurements_home_fragment">
+
+
+        <action
+            android:id="@+id/action_BodyMeasurementHomeFragment_to_HeightFragment"
+            app:destination="@id/HeightFragment" />
+        <action
+            android:id="@+id/action_BodyMeasurementHomeFragment_to_BodyCompositionFragment"
+            app:destination="@id/BodyCompositionFragment" />
+        <action
+            android:id="@+id/action_BodyMeasurementHomeFragment_to_HipWaistFragment"
+            app:destination="@id/HipWaistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HeightFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.height.HeightFragment"
+        android:label="HeightFragment"
+        tools:layout="@layout/height_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/BodyCompositionFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.bodycomposition.BodyCompositionFragment"
+        android:label="BodyCompositionFragment"
+        tools:layout="@layout/body_composition_fragment">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/HipWaistFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.hipwaist.HipWaistFragment"
+        android:label="HipWaistFragment"
+        tools:layout="@layout/hip_waist_fragment">
+
+    </fragment>
+
+
+
+
+</navigation>

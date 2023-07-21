@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/ScanBarcodeFragment">
+
+
+    <fragment
+        android:id="@+id/ScanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.activitytracker.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/scan_barcode_patient_fragment">
+
+
+
+        <action
+            android:id="@+id/action_ScanBarcodeFragment_to_ManualEntryBarcodeFragment"
+            app:destination="@id/ManualEntryBarcodeFragment" />
+        <action
+            android:id="@+id/action_ScanBarcodeFragment_to_ActivityTackeFragment"
+            app:destination="@id/ActivityTackeFragment" app:clearTask="true" app:launchSingleTop="true"  />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ManualEntryBarcodeFragment"
+        android:name="org.southasia.ghru.ui.activitytracker.scanbarcode.manualentry.ManualEntryBarcodeFragment"
+        android:label="ManualEntryBarcodeFragment"
+        tools:layout="@layout/activity_tracker_patient_barcode_manualentry_fragment">
+
+
+        <action
+            android:id="@+id/action_ManualEntryBarcodeFragment_to_ActivityTackeFragment"
+            app:destination="@id/ActivityTackeFragment" app:clearTask="true" app:launchSingleTop="true"  />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ActivityTackeFragment"
+        android:name="org.southasia.ghru.ui.activitytracker.activitytracker.ActivityTackeFragment"
+        android:label="ActivityTackeFragment"
+        tools:layout="@layout/activity_tracker_fragment">
+
+
+
+    </fragment>
+
+
+
+
+
+</navigation>

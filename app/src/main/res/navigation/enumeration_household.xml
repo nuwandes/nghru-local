@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enumeration_detail"
+    app:startDestination="@id/addHouseHoldMember">
+
+
+    <fragment
+        android:id="@+id/addHouseHoldMember"
+        android:name="org.southasia.ghru.ui.enumeration.member.AddHouseHoldMemberFragment"
+        android:label="addMember"
+        tools:layout="@layout/add_house_hold_member_fragment" />
+    <action
+        android:id="@+id/action_global_addHouseHoldMemberFragment"
+        app:destination="@id/addHouseHoldMember" />
+
+
+</navigation>

@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="org.southasia.ghru.ui.enumeration.member.AddHouseHoldMemberViewModel" />
+
+        <import type="org.southasia.ghru.vo.request.HouseHoldMember" />
+
+        <import type="org.southasia.ghru.vo.request.Gender" />
+
+        <import type="org.southasia.ghru.vo.request.Reason" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.enumeration.member.AddHouseHoldMemberViewModel" />
+
+        <variable
+            name="member"
+            type="org.southasia.ghru.vo.request.HouseHoldMember" />
+
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:context="org.southasia.ghru.SettingActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/enumeration_add_a_household_member_title"
+                app:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:focusableInTouchMode="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/error_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_error_bg"
+                    android:visibility="@{safeUnbox(viewModel.memberValidationError) ? View.VISIBLE : View.GONE}">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/margin_20"
+                        app:srcCompat="@drawable/ic_icon_status_warning" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:text="@string/error_add_member_validation"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/enumeration_provider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:text="@string/enumeration_provider"
+                    android:textSize="@dimen/default_font_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line6" />
+
+
+                <RadioGroup
+                    android:id="@+id/provide_info_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_self"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setISSelf(true)}"
+                        android:text="@string/enumeration_button_direct"
+                        android:textColor="@color/button_text_selector"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_respondent"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setISSelf(false)}"
+                        android:text="@string/enumeration_button_contact"
+                        android:textColor="@color/button_text_selector"
+                        android:textSize="20sp" />
+                </RadioGroup>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="match_parent"
+                          android:text="@string/add_household_direct"
+                          android:layout_marginStart="@dimen/margin_32"
+                          android:layout_marginTop="@dimen/margin_20"
+                />
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="match_parent"
+                          android:text="@string/add_household_via_contact"
+                          android:layout_marginStart="@dimen/margin_32"
+                          android:layout_marginTop="@dimen/margin_10"
+                />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:background="@color/separator_gray" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fullNameTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="@drawable/house_hold_text_background"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/enum_hint_color"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fullNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:hint="@string/app_field_first_name"
+                        android:inputType="textCapWords|textCapSentences|textPersonName"
+                        android:singleLine="true"
+                        android:text="@={member.fullName}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/enum_hint_color"
+                        android:textSize="@dimen/default_font_size"
+                        android:translationY="3dp"
+                        app:validateEmpty="@{true}"
+                        app:validateRegex='@{"^(?!\\s)^([a-zA-Z0-9 !-~]){1,}$"}'/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/familyNameTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/textView_margin"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="@drawable/house_hold_text_background"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/enum_hint_color"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullNameTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/familyNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:hint="@string/app_field_family_name"
+                        android:inputType="textCapWords|textCapSentences|textPersonName"
+                        android:singleLine="true"
+                        android:text="@={member.familyName}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/enum_hint_color"
+                        android:textSize="@dimen/default_font_size"
+                        android:translationY="3dp"
+                        app:validateEmpty="@{true}"
+                        app:validateRegex='@{"^(?!\\s)^([a-zA-Z0-9 !-~]){1,}$"}'/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nickNameTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/textView_margin"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="@drawable/house_hold_text_background"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/enum_hint_color"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nickNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/transparent"
+                        android:gravity="center_vertical|start"
+                        android:hint="@string/enumeration_field_nickname"
+                        android:inputType="textCapWords|textCapSentences|textPersonName"
+                        android:singleLine="true"
+                        android:text="@={member.nickName}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/enum_hint_color"
+                        android:textSize="@dimen/default_font_size"
+                        android:translationY="3dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:background="@color/separator_gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:text="@string/enumeration_12_months_stay_question"
+                    android:textSize="@dimen/default_font_size" />
+
+                <TextView
+                    android:id="@+id/textViewErrorWillStay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/eight_dp"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/hh_member_stay_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_24"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_hh_yes"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setIsStayed(true)}"
+                        android:text="@string/app_yes"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_hh_no"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setIsStayed(false)}"
+                        android:text="@string/app_no"
+                        android:textSize="20sp" />
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/lb_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:text="@string/app_gender"
+                    android:textSize="@dimen/default_font_size" />
+
+                <TextView
+                    android:id="@+id/textViewErrorGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/eight_dp"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32">
+
+
+                    <Button
+                        android:id="@+id/buttonMale"
+                        android:layout_width="168dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="fill"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_weight="1"
+                        android:background="@{member.gender.equals(Gender.MALE.name)? @drawable/radio_button_selected_bg : @drawable/radio_button_bg}"
+                        android:drawableTop="@drawable/ic_icon_male"
+                        android:elevation="2dp"
+                        android:onClick="@{()->viewModel.setGender(Gender.MALE)}"
+                        android:paddingTop="15dp"
+                        android:text="@string/app_gender_male"
+                        android:textAllCaps="false"
+                        android:textColor="@{member.gender.equals(Gender.MALE.name)? @color/colorPrimary : @color/dark_gray}"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/buttonFemale"
+                        android:layout_width="168dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="fill"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_weight="1"
+                        android:background="@{member.gender.equals(Gender.FEMALE.name)? @drawable/radio_button_selected_bg : @drawable/radio_button_bg}"
+                        android:drawableTop="@drawable/ic_icon_female"
+                        android:elevation="2dp"
+                        android:onClick="@{()->viewModel.setGender(Gender.FEMALE)}"
+                        android:paddingTop="15dp"
+                        android:text="@string/app_gender_female"
+                        android:textAllCaps="false"
+                        android:textColor="@{member.gender.equals(Gender.FEMALE.name)? @color/colorPrimary : @color/dark_gray}"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/buttonGenderOther"
+                        android:layout_width="168dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="fill"
+                        android:layout_weight="1"
+                        android:background="@{member.gender.equals(Gender.OTHER.name)? @drawable/radio_button_selected_bg : @drawable/radio_button_bg}"
+                        android:drawableTop="@drawable/ic_gender_other"
+                        android:elevation="2dp"
+                        android:onClick="@{()->viewModel.setGender(Gender.OTHER)}"
+                        android:paddingTop="15dp"
+                        android:text="@string/app_gender_other"
+                        android:textAllCaps="false"
+                        android:textColor="@{member.gender.equals(Gender.OTHER.name)? @color/colorPrimary : @color/dark_gray}"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:background="@color/separator_gray" />
+
+
+                <TextView
+                    android:id="@+id/lb_hh_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:text="@string/enumeration_contact_primary"
+                    android:textSize="@dimen/default_font_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+
+                <RadioGroup
+                    android:id="@+id/member_hh_head_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_yes_hh_head"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setIsHouseHoldHead(true)}"
+                        android:text="@string/app_yes"
+                        android:textColor="@color/button_text_selector"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_no_hh_head"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setIsHouseHoldHead(false)}"
+                        android:text="@string/app_no"
+                        android:textColor="@color/button_text_selector"
+                        android:textSize="20sp" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/textView_margin"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextContactPrefix"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:enabled="false"
+                            android:gravity="center_vertical|start"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/hhHeadContacNoLayout"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/textView_margin"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="5dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/hhHeadContacNoEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/app_contact_no"
+                            android:inputType="phone"
+                            android:maxLength="9"
+                            android:singleLine="true"
+                            android:text="@={member.contactNo}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/enumeration_contact_optional"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:background="@color/separator_gray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dobTextLayout"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/house_hold_text_background"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dobEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:cursorVisible="false"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/app_dob"
+                            android:text="@={member.DOB}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/selector_txt"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/orTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/eight_dp"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginBottom="@dimen/eight_dp"
+                        android:text="@string/app_or"
+                        android:textSize="20sp" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ageTextLayout"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ageEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/app_age"
+                            android:inputType="number"
+                            android:text="@={member.age}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp"
+                            app:validateMinLengthMessage="@{@string/error_age}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/yearsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/eight_dp"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginBottom="@dimen/eight_dp"
+                        android:text="@string/string_years"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:background="@color/separator_gray" />
+
+
+                <TextView
+                    android:id="@+id/lb_participant_able_attend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:text="@string/enumeration_attend_screening_on_proposed_dates_question"
+                    android:textSize="@dimen/default_font_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+                <TextView
+                    android:id="@+id/textViewErrorAttend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/eight_dp"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/participant_attend_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lb_participant_able_attend">
+
+                    <RadioButton
+                        android:id="@+id/radio_attend_yes"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setIsScreening(true)}"
+                        android:text="@string/app_yes"
+                        android:textColor="@color/button_text_selector"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_attend_no"
+                        android:layout_width="@dimen/height_260"
+                        android:layout_height="64dp"
+                        android:background="@drawable/radio_button_selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> viewModel.setIsScreening(false)}"
+                        android:text="@string/app_no"
+                        android:textColor="@color/button_text_selector"
+                        android:textSize="20sp" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/appointmentDateTextLayout"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:background="@drawable/house_hold_text_background"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/enum_hint_color"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/appointmentDateEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/transparent"
+                        android:cursorVisible="false"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center_vertical|start"
+                        android:hint="@string/app_appointment_date"
+                        android:text="@={member.appointment_date}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/selector_txt"
+                        android:textColorHint="@color/enum_hint_color"
+                        android:textSize="@dimen/default_font_size"
+                        android:translationY="3dp"
+                        android:clickable="true"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAttented"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/lb_state_reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:text="@string/enumeration_state_reason"
+                        android:textSize="@dimen/default_font_size"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/participant_attend_radio_group" />
+
+
+                    <RadioGroup
+                        android:id="@+id/reasonRadioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:gravity="start"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lb_state_reason">
+
+                        <RadioButton
+                            android:id="@+id/radioUnableDuringDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_24"
+                            android:button="@drawable/radio_button"
+                            android:onClick="@{(v) -> viewModel.setReason(Reason.UNAVAILABLE)}"
+                            android:text="@string/enumeration_state_reason_option_1"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/radioSeriousIllness"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_24"
+                            android:button="@drawable/radio_button"
+                            android:onClick="@{(v) -> viewModel.setReason(Reason.SERIOUS_ILLNESS)}"
+                            android:text="@string/enumeration_state_reason_option_2"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/radioOther"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_24"
+                            android:button="@drawable/radio_button"
+                            android:onClick="@{(v) -> viewModel.setReason(Reason.OTHER)}"
+                            android:text="@string/string_other"
+                            android:textSize="20sp"
+                            android:visibility="gone"/>
+                    </RadioGroup>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/absentReasonLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:layout_marginBottom="35dp"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        android:visibility="gone"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/reasonRadioGroup"
+                        app:visibilityEmpty="@{!member.reasonForNotAttending.equals(Reason.OTHER.name)}">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/absentReasonEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/enumeration_state_reason_field_other"
+                            android:inputType="textCapWords|textCapSentences|textPersonName"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/bottom_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:background="@drawable/card_background_bottom"
+                    android:elevation="@dimen/margin_20"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/absentReasonLayout">
+
+
+                    <Button
+                        android:id="@+id/previousButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:background="@color/transparent"
+                        android:drawableStart="@drawable/ic_bottom_previous_arrow"
+                        android:foregroundGravity="center_horizontal"
+                        android:text=""
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/finishButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:background="@color/transparent"
+                        android:drawableEnd="@drawable/ic_bottom_next_arrow"
+                        android:drawablePadding="@dimen/margin_normal"
+                        android:fontFamily="@font/roboto_bold"
+                        android:foregroundGravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="@string/app_Finish"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/default_font_size" />
+
+                </RelativeLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </ScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

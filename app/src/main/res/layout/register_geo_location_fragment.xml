@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="org.southasia.ghru.ui.enumeration.registergeolocation.RegisterGeolocationViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.enumeration.registergeolocation.RegisterGeolocationViewModel" />
+    </data>
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:context="org.southasia.ghru.SettingActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/enumeration_household_visit_title"
+                app:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:focusableInTouchMode="true"
+            android:paddingTop="80dp"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider"
+                    android:dividerPadding="1dp"
+                    android:drawableEnd="@drawable/ic_seperator"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    android:showDividers="none"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_household_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="@dimen/textView_margin"
+                        android:layout_marginTop="@dimen/textView_margin"
+                        android:layout_marginEnd="@dimen/textView_margin"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/household_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/enumeration_field_address"
+                            android:inputType="textCapWords|textCapSentences|textPersonName"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            app:validateEmpty="@{true}"
+                            app:validateRegex='@{"^(?!\\s)^([a-zA-Z0-9 !-~]){1,}$"}'/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_distric_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="@dimen/textView_margin"
+                        android:layout_marginTop="@dimen/textView_margin"
+                        android:layout_marginEnd="@dimen/textView_margin"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/household_district"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/area_village_district"
+                            android:inputType="textCapWords|textCapSentences|textPersonName"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            app:validateEmpty="@{true}"
+                            app:validateRegex='@{"^(?!\\s)^([a-zA-Z0-9 !-~]){1,}$"}'/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="@dimen/textView_margin"
+                        android:layout_marginTop="@dimen/textView_margin"
+                        android:layout_marginEnd="@dimen/textView_margin"
+                        android:layout_marginBottom="@dimen/textView_margin"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/household_vilage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/enumeration_field_postcode"
+                            android:inputType="textCapWords|textCapSentences|textPersonName"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/registered_success_geo_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        android:background="@drawable/ic_img_geo_loc_background"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:layout_marginEnd="19dp"
+                            android:layout_marginBottom="@dimen/margin_20"
+                            android:contentDescription="@string/imageview"
+                            app:srcCompat="@drawable/ic_circular_tick" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical|start"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/margin_24"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="start|center_vertical"
+                                android:text="@string/registered_geolocation_data"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:layout_marginTop="10dp"/>
+
+
+                                <TextView
+                                    android:id="@+id/textViewCoordinates"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/margin_24"
+                                    android:fontFamily="@font/roboto"
+                                    android:gravity="start|center_vertical"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:layout_marginRight="@dimen/margin_10"/>
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/registered_geo_error_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/ic_error_bg"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:layout_marginEnd="19dp"
+                            android:layout_marginBottom="@dimen/margin_20"
+                            android:contentDescription="@string/imageview"
+                            app:srcCompat="@drawable/spirometry_error_icon" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/margin_24"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/failed_to_register_geolocation_data"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/margin_24"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/enumeration_error_location_services"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_20"
+                                android:gravity="right">
+
+                                    <Button
+                                        android:id="@+id/buttonRetryGeoCoordinates"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/retry"
+                                        android:textColor="@color/white"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_geo_location_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/label_geo_location"
+                        android:textColor="#DE000000"
+                        android:textSize="24sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupGeoLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yesLocation"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:layout_marginEnd="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_yes"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/noLocation"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_no"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
+                    <!--<Button-->
+                    <!--android:id="@+id/registerGPS"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_marginTop="@dimen/textView_margin"-->
+                    <!--android:background="@drawable/ic_button_frame"-->
+                    <!--android:drawableStart="@drawable/ic_location_btn"-->
+                    <!--android:drawablePadding="13dp"-->
+                    <!--android:fontFamily="@font/roboto_bold"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:paddingStart="@dimen/margin_normal"-->
+                    <!--android:text="@string/enumeration_household_visit_button_geolocation"-->
+                    <!--android:textAllCaps="true"-->
+                    <!--android:textColor="@color/colorPrimary"-->
+                    <!--android:textSize="16sp" />-->
+
+
+                    <!--<androidx.appcompat.widget.LinearLayoutCompat-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@drawable/ic_seperator" />-->
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/textView_margin"
+                        android:layout_marginTop="@dimen/textView_margin"
+                        android:layout_marginEnd="@dimen/textView_margin"
+                        android:background="@drawable/house_hold_text_background"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/household_identifier"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/hint_household_identifire"
+                            android:inputType="textCapWords|textCapSentences|textPersonName"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/nextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="30dp"
+                        android:background="@drawable/ic_button_fill_primary"
+                        android:drawablePadding="@dimen/margin_normal"
+                        android:fontFamily="@font/roboto_bold"
+                        android:foregroundGravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="@string/next"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/default_font_size"
+                        android:layout_marginBottom="300dp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+   </ScrollView>
+
+
+</layout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="org.southasia.ghru.vo.User" />
+
+        <import type="org.southasia.ghru.ui.homeenumerationlist.HomeEmumerationListViewModel" />
+
+        <variable
+            name="homeViewModel"
+            type="org.southasia.ghru.ui.homeenumerationlist.HomeEmumerationListViewModel" />
+
+
+        <variable
+            name="userResource"
+            type="org.southasia.ghru.vo.Resource" />
+
+        <variable
+            name="retryCallback"
+            type="org.southasia.ghru.ui.common.RetryCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="#E6F6FF"
+            android:gravity="center"
+            android:paddingStart="42dp"
+            android:paddingEnd="42dp"
+            android:text="@{user.name}"
+            android:textSize="@dimen/default_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tareq Bin Ali" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nghru_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:listitem="@layout/home_emumeration_list_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

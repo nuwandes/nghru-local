@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.tony19:logback-android:1.1.1-8@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f6dc06ed5e2142d39e9c27fe78e938a/logback-android-1.1.1-8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f6dc06ed5e2142d39e9c27fe78e938a/logback-android-1.1.1-8/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tony19/logback-android/1.1.1-8/89b5cfe7ac8fc060f24cf235a2b0b5210a4537fb/logback-android-1.1.1-8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tony19/logback-android/1.1.1-8/d94f6cf47084ad05fdb8bd05c3b36f4c711f87ca/logback-android-1.1.1-8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

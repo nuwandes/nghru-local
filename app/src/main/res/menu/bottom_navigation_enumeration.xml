@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeEnumerationFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_icon_enumeration"
+        android:title="@string/enumeration"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/stationFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_icon_stations"
+        android:title="@string/string_station"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_more"
+        android:enabled="true"
+        android:icon="@drawable/ic_icon_devices"
+        android:title="@string/string_more"
+        app:showAsAction="ifRoom" />
+</menu>

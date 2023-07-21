@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userResource"
+            type="org.southasia.ghru.vo.Resource" />
+
+        <variable
+            name="retryCallback"
+            type="org.southasia.ghru.ui.common.RetryCallback" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/barCodeImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/margin_20"
+            android:contentDescription="@string/imageviewnumber"
+            android:scaleType="fitXY" />
+
+
+        <TextView
+            android:id="@+id/patientDataTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/barCodeImageView"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="40dp"
+            android:gravity="center_horizontal"
+            android:text="" />
+
+
+    </RelativeLayout>
+
+
+</layout>

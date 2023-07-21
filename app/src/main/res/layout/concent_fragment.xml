@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="org.southasia.ghru.ui.enumeration.concent.ConcentViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.enumeration.concent.ConcentViewModel" />
+
+        <import type="android.text.Html" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="org.southasia.ghru.SettingActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/permission"
+                app:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider"
+            android:dividerPadding="@dimen/one_dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_32"
+                android:layout_marginTop="@dimen/margin_32"
+                android:layout_marginEnd="52dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:text="@string/enumeration_explanation_permission_subtitle"
+                android:textColor="#DE000000"
+                android:textSize="@dimen/default_font_size"
+                android:textStyle="bold" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/divider"
+                    android:dividerPadding="@dimen/one_dp"
+                    android:drawableEnd="@drawable/ic_seperator"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    android:showDividers="none"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="44dp"
+                            android:layout_marginTop="@dimen/margin_32"
+                            android:contentDescription="@string/imageviewnumber"
+                            app:srcCompat="@drawable/ic_icon_user_consent" />
+
+
+                        <TextView
+                            android:id="@+id/textViewNewUer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="@dimen/margin_32"
+                            android:layout_marginEnd="@dimen/margin_24"
+                            android:text="@string/enumeration_explanation_permission_point_1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/default_font_size" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/separator1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageViewConsent2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="44dp"
+                            android:layout_marginTop="@dimen/margin_32"
+                            android:contentDescription="@string/imageviewnumber"
+                            app:srcCompat="@drawable/ic_icon_analytics_consent" />
+
+
+                        <TextView
+                            android:id="@+id/textViewHoushold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="@dimen/margin_24"
+                            android:layout_toEndOf="@+id/imageViewConsent2"
+                            android:text="@string/enumeration_explanation_permission_point_2"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/default_font_size" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/separator3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator"
+                        android:orientation="vertical" />
+
+
+                    <TextView
+                        android:id="@+id/explore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="52dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_vertical"
+                        android:text="@string/enumeration_explanation_permission_explainer_video"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:id="@+id/imageviewVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="30dp"
+                        android:contentDescription="@string/imageviewvideo"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/spirometryintroimg" />
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/separator5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator" />
+
+
+                    <TextView
+                        android:id="@+id/textViewAskRespond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_24"
+                        android:text="@{Html.fromHtml(@string/enumeration_explanation_permission_consent)}"
+                        android:textSize="@dimen/default_font_size" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:layout_marginBottom="@dimen/margin_24"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/buttonAcceptAndContinue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_button_fill_primary"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/twenty_one_dp"
+                            android:paddingEnd="@dimen/twenty_one_dp"
+                            android:text="@string/app_button_accept_and_proceed"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/default_font_size" />
+
+                        <Button
+                            android:id="@+id/saveAndExitButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:layout_marginBottom="40dp"
+                            android:background="@drawable/ic_button_revisited_household"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/twenty_one_dp"
+                            android:paddingEnd="@dimen/twenty_one_dp"
+                            android:text="@string/enumeration_explanation_permission_modal_button_cancel"
+                            android:textColor="@color/defult_blue"
+                            android:textSize="@dimen/default_font_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>

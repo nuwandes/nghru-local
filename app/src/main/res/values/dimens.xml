@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="photo_size">64dp</dimen>
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="fab_margin">@dimen/margin_normal</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="item_width">200dp</dimen>
+
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+
+    <dimen name="plant_item_image_height">100dp</dimen>
+
+    <dimen name="navigation_drawer_header_height">192dp</dimen>
+    <dimen name="navigation_drawer_header_padding">@dimen/margin_normal</dimen>
+    <dimen name="navigation_drawer_image_width">100dp</dimen>
+
+    <dimen name="textView_margin">@dimen/margin_32</dimen>
+
+    <dimen name="bm_text_view_hight">96dp</dimen>
+    <dimen name="bp_text_hight">@dimen/height_160</dimen>
+    <dimen name="bp_text_width">80dp</dimen>
+
+    <dimen name="sub_title_size">24sp</dimen>
+    <dimen name="default_font_size">24sp</dimen>
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="icon_size">48dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_28">28dp</dimen>
+    <dimen name="margin_20_m">-20dp</dimen>
+    <dimen name="margin_200">200dp</dimen>
+    <dimen name="height_60">60dp</dimen>
+    <dimen name="height_160">160dp</dimen>
+    <dimen name="height_260">260dp</dimen>
+    <dimen name="height_360">360dp</dimen>
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="twenty_one_dp">21dp</dimen>
+</resources>

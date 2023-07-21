@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/scanBarcodeFragment">
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.fundoscopy.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/ecg_scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_displayBarcode"
+            app:clearTask="true"
+            app:destination="@id/displayBarcode"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_manualFragment"
+            app:destination="@id/manualFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualFragment"
+        android:name="org.southasia.ghru.ui.fundoscopy.manualentry.ManualEntryFundoscopyFragment"
+        android:label="ManualFragment"
+        tools:layout="@layout/fundoscopy_manual_barcode_fragment">
+        <action
+            android:id="@+id/action_manual_to_displayBarcode"
+            app:clearTask="true"
+            app:destination="@id/displayBarcode"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyIDFragment"
+        android:name="org.southasia.ghru.ui.fundoscopy.verifyid.FundoscopyVerifyIDFragment"
+        android:label="VerifyIDFragment"
+        tools:layout="@layout/fundoscopy_verify_id_fragment">
+        <action
+            android:id="@+id/action_verifyIDFragment_to_displayBarcode"
+            app:destination="@id/displayBarcode" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/guideMainFragment"
+        android:name="org.southasia.ghru.ui.fundoscopy.guide.main.GuideMainFragment"
+        android:label="GuideMainFragment"
+        tools:layout="@layout/fundos_guide_main_fragment">
+
+        <action
+            android:id="@+id/action_guideMainFragment_to_readingFragment"
+            app:destination="@id/readingFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/displayBarcode"
+        android:name="org.southasia.ghru.ui.fundoscopy.displaybarcode.DisplayBarcodeFragment"
+        android:label="displayBarcode"
+        tools:layout="@layout/display_barcode">
+
+        <action
+            android:id="@+id/action_displayBarcode_to_guideMainFragment"
+            app:destination="@id/guideMainFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/readingFragment"
+        android:name="org.southasia.ghru.ui.fundoscopy.reading.FundoscopyReadingFragment"
+        android:label="ReadFragment"
+        tools:layout="@layout/trace_fragment">
+
+    </fragment>
+
+
+</navigation>

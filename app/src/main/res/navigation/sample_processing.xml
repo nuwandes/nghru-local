@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sample_processing"
+    app:startDestination="@id/pendingSampleListFragment">
+
+
+    <fragment
+        android:id="@+id/pendingSampleListFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.pendingsamplelist.PendingSampleListFragment"
+        android:label="PendingSampleListFragment"
+        tools:layout="@layout/pending_sample_list_fragment">
+
+        <action
+            android:id="@+id/action_pendingSampleListFragment_to_tubeScanBarcodeFragment"
+            app:destination="@id/tubeScanBarcodeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/tubeScanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.tubescanbarcode.TubeScanBarcodeFragment"
+        android:label="TubeScanBarcodeFragment"
+        tools:layout="@layout/tube_scan_barcode_fragment">
+
+        <action
+            android:id="@+id/action_tubeScanBarcodeFragment_to_sampleMangementHomeViewModel"
+            app:clearTask="true"
+            app:destination="@id/sampleMangementHomeViewModel"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_tubeScanBarcodeFragment_to_manualTubeScanBarcodeFragment"
+            app:destination="@id/manualTubeScanBarcodeFragment" />
+        <action
+            android:id="@+id/action_tubeScanBarcodeFragment_to_sampleStorageFragment"
+            app:clearTask="true"
+            app:destination="@id/sampleStorageFragment"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualTubeScanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.tubescanbarcode.manualentry.TubeScanManualBarcodeFragment"
+        android:label="TubeScanManualBarcodeFragment"
+        tools:layout="@layout/sample_management_manual_tubescan">
+
+        <action
+            android:id="@+id/action_manualTubeScanBarcodeFragment_to_sampleMangementHomeViewModel"
+            app:clearTask="true"
+            app:destination="@id/sampleStorageFragment"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/sampleMangementHomeViewModel"
+        android:name="org.southasia.ghru.ui.samplemanagement.home.SampleMangementHomeFragment"
+        android:label="SampleMangementHomeFragment"
+        tools:layout="@layout/sample_mangement_home_fragment">
+
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_LipidProfileFragment"
+            app:destination="@id/LipidProfileFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_FastingBloodGlucoseFragment"
+            app:destination="@id/FastingBloodGlucoseFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_Hb1AcFragment"
+            app:destination="@id/Hb1AcFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_HOGTTFragment"
+            app:destination="@id/HOGTTFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_TotalCholesterolFragment"
+            app:destination="@id/TotalCholesterolFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_HDLFragment"
+            app:destination="@id/HDLFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_TriglyceridesFragment"
+            app:destination="@id/TriglyceridesFragment" />
+        <action
+            android:id="@+id/action_sampleMangementHomeViewModel_to_HemoglobinFragment"
+            app:destination="@id/HemoglobinFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LipidProfileFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.lipidprofile.LipidProfileFragment"
+        android:label="LipidProfileFragment"
+        tools:layout="@layout/lipid_profile_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/FastingBloodGlucoseFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.fastingbloodglucose.FastingBloodGlucoseFragment"
+        android:label="FastingBloodGlucoseFragment"
+        tools:layout="@layout/fasting_blood_glucose_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/Hb1AcFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.hb1ac.Hb1AcFragment"
+        android:label="Hb1AcFragment"
+        tools:layout="@layout/hb_ac_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/TotalCholesterolFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.totalcholesterol.TotalCholesterolFragment"
+        android:label="TotalCholesterolFragment"
+        tools:layout="@layout/total_cholesterol_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/TriglyceridesFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.triglycerides.TriglyceridesFragment"
+        android:label="TriglyceridesFragment"
+        tools:layout="@layout/triglycerides_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/HemoglobinFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.hemoglobin.HemoglobinFragment"
+        android:label="HemoglobinFragment"
+        tools:layout="@layout/hemoglobin_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/HDLFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.hdl.HDLFragment"
+        android:label="HDLFragment"
+        tools:layout="@layout/h_d_l_fragment">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/sampleStorageFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.StorageFragment"
+        android:label="storageFragment"
+        tools:layout="@layout/sample_storage_fragment">
+
+        <action
+            android:id="@+id/action_storageFragment_to_scanFragment"
+            app:destination="@id/QRcodeScanFragment" />
+        <action
+            android:id="@+id/action_sampleStorageFragment_to_sampleMangementHomeViewModel"
+            app:destination="@id/sampleMangementHomeViewModel" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/QRcodeScanFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.scanqrcode.ScanBarcodeFragment"
+        android:label="scanQRFragment"
+        tools:layout="@layout/bagscan_storage_fragment">
+
+        <action
+            android:id="@+id/action_QRFragment_to_storageFragment"
+            app:destination="@id/sampleStorageFragment" />
+        <action
+            android:id="@+id/action_QRFragment_to_manualEntryFragment"
+            app:destination="@id/QRcodeManualEntryFragment" />
+
+    </fragment>
+
+    <fragment
+
+        android:id="@+id/QRcodeManualEntryFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.storage.manualentry.ManualEntryFragment"
+        android:label="scanQRFragment"
+        tools:layout="@layout/storage_manual_qrcode_entry_fragment">
+
+        <action
+            android:id="@+id/action_QRcodeManualEntryFragment_to_home"
+            app:clearTask="true"
+            app:destination="@id/sampleMangementHomeViewModel"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/HOGTTFragment"
+        android:name="org.southasia.ghru.ui.samplemanagement.hogtt.HOGTTFragment"
+        android:label="HOGTTFragment"
+        tools:layout="@layout/hogtt_fragment">
+
+    </fragment>
+
+
+    <action
+        android:id="@+id/action_global_sampleMangementHomeViewModel"
+        app:destination="@id/sampleMangementHomeViewModel" />
+    <action android:id="@+id/action_global_sampleStorageFragment" app:destination="@id/sampleStorageFragment" app:clearTask="true"/>
+
+
+</navigation>
+

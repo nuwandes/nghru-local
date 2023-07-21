@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/ScanBarcodeFragmentId"
+            app:startDestination="@id/ScanBarcodeFragment">
+
+    <fragment
+        android:id="@+id/ScanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.intake.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_ScanBarcodeFragment_to_Diet_WebFragment"
+            app:clearTask="true"
+            app:destination="@id/IntakeReadingsFragment" />
+
+        <action
+            android:id="@+id/action_ScanBarcodeFragment_to_ManualEntryBarcodeFragment"
+            app:destination="@id/ManualEntryBarcodeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ManualEntryBarcodeFragment"
+        android:name="org.southasia.ghru.ui.intake.scanbarcode.ManualEntryBarcodeFragment"
+        android:label="ManualEntryBarcodeFragment"
+        tools:layout="@layout/register_patient_barcode_manualentry_fragment">
+
+        <action
+            android:id="@+id/action_ManualEntryBarcodeFragment_to_WebFragment"
+            app:clearTask="true"
+            app:destination="@id/IntakeReadingsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/IntakeReadingsFragment"
+        android:name="org.southasia.ghru.ui.intake.readings.IntakeReadingsFragment"
+        android:label="IntakeReadingsFragment"
+        tools:layout="@layout/intake_web_fragment">
+
+    </fragment>
+
+
+</navigation>

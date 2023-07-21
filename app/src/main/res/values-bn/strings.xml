@@ -1,0 +1,743 @@
+<resources>
+<string name="app_name">nHealth</string>
+    <string name="retry">পুনরায় চেষ্টা করা</string>
+    <string name="app_error_unknown_error">অজানা ত্রুটি</string>
+    <string name="app_user_photo">ব্যবহারকারীর ছবি</string>
+    <string name="app_user_name">ব্যবহারকারীর নাম</string>
+    <string name="app_not_synced">সিঙ্ক না</string>
+    <string name="app_warning">সতর্কতা</string>
+    <string name="app_confirmation">অনুমোদন</string>
+    <string name="app_button_please_select_reason">কারণ নির্বাচন করুন</string>
+    <string name="app_error_valid_phone">বৈধ ফোন নম্বর লিখুন দয়া করে</string>
+    <string name="app_error_gender">লিঙ্গ নির্বাচন করুন</string>
+    <string name="app_error_reason">কারণ উল্লেখ করুন</string>
+    <string name="app_error_attent_or_not">উপস্থিতি বা না নির্বাচন করুন</string>
+    <string name="app_error_yes_or_no">হ্যাঁ বা না নির্বাচন করুন</string>
+    <string name="app_error_please_select_one">অনুগ্রহপূর্বক একটা নির্বাচন করুন</string>
+    <string name="app_error_valid_email">বৈধ ইমেইল ঠিকানা লিখুন</string>
+    <string name="app_button_accept_and_proceed">গ্রহণ এবং এগিয়ে যান</string>
+    <string name="app_secondary_contact_number">সেকেন্ডারি যোগাযোগ নম্বর (ঐচ্ছিক)</string>
+    <string name="app_contact_number_country_code"> 94 _</string>
+    <string name="app_primary_contact_number">প্রাথমিক যোগাযোগ নম্বর</string>
+    <string name="app_field_preferred_name">পছন্দের নাম (যদি উপলব্ধ)</string>
+    <string name="app_field_family_name">পারিবারিক নাম</string>
+    <string name="app_field_first_name">প্রথম / প্রদত্ত নাম (গুলি)</string>
+    <string name="app_continue">অবিরত</string>
+    <string name="app_button_go_to_home">বাড়িতে যেতে</string>
+    <string name="app_button_confirm">নিশ্চিত করা</string>
+    <string name="app_button_back_to_home">বাড়িতে ফিরে যাও</string>
+    <string name="app_button_submit">জমা দিন</string>
+    <string name="app_continue_to_next_participant">পরবর্তী রোগীর অবিরত</string>
+    <string name="app_scan_the_barcode_of_the_participant">অংশীদার যাচাই এবং অবিরত অবিরত বারকোড স্ক্যান করুন</string>
+    <string name="app_button_manual_entry">ম্যানুয়াল প্রবেশ</string>
+    <string name="app_guide">গাইড</string>
+    <string name="app_button_go_back">ফিরে যাও</string>
+    <string name="app_scan_participant_barcode">অংশগ্রহণকারীদের বারকোড স্ক্যান করুন</string>
+    <string name="app_button_ok">ঠিক আছে</string>
+    <string name="app_button_proceed">এগিয়ে যান</string>
+    <string name="app_scan_barcode">স্ক্যান বারকোড</string>
+    <string name="app_age">Age</string>
+    <string name="app_logout_confirm">আপনি লগ আউট করতে চান?</string>
+    <string name="app_logout_button">প্রস্থান</string>
+    <string name="app_screening_checklist_reminder">অংশগ্রহণকারী স্ক্রীনিং চেকলিস্ট কার্ড সাইন ইন করতে ভুলবেন না</string>
+    <string name="app_login_userid">ফোন নম্বর বা ইমেল ঠিকানা</string>
+    <string name="app_1_preparation">1. প্রস্তুতি</string>
+    <string name="app_3_measurements">3. পরিমাপ</string>
+    <string name="app_scan_qr_code_title">স্ক্যান QR কোড</string>
+    <string name="app_button_sucessfully_complete">সফলভাবে সম্পন্ন</string>
+    <string name="app_manual_entry_field_participant_id">অংশগ্রহণকারী আইডি লিখুন</string>
+    <string name="app_back_to_barcode_scanner">স্ক্যানার ফিরে</string>
+    <string name="app_button_accept_and_continue">গ্রহণ এবং অবিরত</string>
+    <string name="app_gender">লিঙ্গ</string>
+    <string name="app_gender_female">মহিলা</string>
+    <string name="app_gender_male">পুরুষ</string>
+    <string name="app_gender_other">অন্যান্য</string>
+    <string name="app_dob">জন্ম তারিখ</string>
+    <string name="app_or">অথবা</string>
+    <string name="app_yes">হাঁ</string>
+    <string name="app_no">না</string>
+    <string name="app_Finish">শেষ</string>
+    <string name="app_contact_no">যোগাযোগের নম্বর</string>
+    <string name="app_contact_no_optional">যোগাযোগ সংখ্যা (ঐচ্ছিক)</string>
+
+    <string name="screening">স্ক্রিনিং</string>
+    <string name="screening_biological_samples">জৈবিক নমুনা</string>
+    <string name="screening_hlq">স্বাস্থ্য এবং জীবনধারা প্রশ্নাবলী</string>
+    <string name="screening_register_participant">অংশগ্রহণকারী নিবন্ধন করুন</string>
+    <string name="screening_body_measurements">শারীরিক পরিমাপ</string>
+    <string name="screening_language_title">ভাষা</string>
+    <string name="screening_language_english">ইংরেজি</string>
+    <string name="screening_language_bengali">বাংলা</string>
+    <string name="screening_language_hindi">হিন্দি</string>
+    <string name="screening_language_urdu">উর্দু</string>
+    <string name="fundoscopy">Funduscopy</string>
+    <string name="ecg">ইলেক্ট্রোকার্ডিওগ্রাফি (ইসিজি)</string>
+    <string name="pathology">রোগবিদ্যা</string>
+    <string name="medical_report">মেডিকেল পর্যালোচনা / রিপোর্ট</string>
+    <string name="search_hint">অনুসন্ধান ভাণ্ডার</string>
+    <string name="repo_full_name" translatable="false"><b>%s</b>/%s</string>
+    <string name="member_full_name" translatable="false"> %s %s </string>
+    <string name="pending_sample">মুলতুবি নমুনা তালিকা (% s)</string>
+    <string name="empty_search_result">জন্য কোন ফলাফল<b>%s</b></string>
+    <string name="a11y_contributor_avatar">অবদানকারী অবতার</string>
+    <string name="navigation_drawer_header_content_description">ন্যাভিগেশন হেডার</string>
+    <string name="home">বাড়ি</string>
+    <string name="setting">বিন্যাস</string>
+    <string name="spirometry">spirometry</string>
+    <string name="password">Password</string>a
+    <string name="phone_number">ফোন নম্বর</string>
+    <string name="login">লগইন</string>
+    <string name="forgot_password">পাসওয়ার্ড ভুলে গেছেন?</string>
+    <string name="synced">সিঙ্ক হয়েছে</string>
+
+    <string name="enumeration">শুমার</string>
+    <string name="enumeration_new_household_visit">নতুন পরিবারের দর্শন</string>
+    <string name="enumeration_household_visit_title">বাড়িতে ভ্রমণ</string>
+    <string name="enumeration_explanation_permission_title">সম্মতি</string>
+    <string name="enumeration_household_visit_button_geolocation">ভৌগলিক অবস্থান তথ্য নিবন্ধন করুন</string>
+    <string name="enumeration_field_address">ঠিকানা</string>
+    <string name="enumeration_field_area_village_district">গ্রামের নাম (যদি প্রযোজ্য হয়)</string>
+    <string name="enumeration_explanation_permission_subtitle">আপনি উত্তরদাতার নিম্নলিখিত ব্যাখ্যা করুন দয়া করে নিশ্চিত করুন।</string>
+    <string name="enumeration_explanation_permission_point_1">আমরা আপনার এবং আপনার পরিবারের সদস্যদের সম্পর্কে কিছু মৌলিক তথ্য সংগ্রহ করব।</string>
+    <string name="enumeration_explanation_permission_point_2">শুধুমাত্র পরিবারের সদস্যরা আমন্ত্রিত হয়েছেন তারা এই গবেষণায় অংশগ্রহণের যোগ্য হবেন</string>
+    <string name="enumeration_household_members_notice">শুধুমাত্র সদস্য যার প্রোফাইল সম্পন্ন হয় গবেষণা অংশগ্রহণের জন্য যোগ্য। যদি আপনি সমস্ত যোগ্য সদস্য যোগ করা হয়, আইডি বরাদ্দ করতে এগিয়ে যান।</string>
+    <string name="enumeration_explanation_permission_consent">&lt;b&gt; প্রতিক্রিয়াশীলকে জিজ্ঞাসা করুন: &lt;/ b&gt; "আপনি কি আমাদের সাথে আপনার পরিবারের তথ্য ভাগ করে নিতে চান?"</string>
+    <string name="enumeration_assign_invitation_id_to_household_instruction">একটি unassigned pre-printed আমন্ত্রণ আইডি QR কোড আটকে দিন, অ্যাপয়েন্টমেন্ট কার্ডগুলিতে আটকে দিন এবং QR কোডটি স্ক্যান করুন</string>
+    <string name="enumeration_title_add_member">একটি পরিবারের সদস্য যোগ করুন</string>
+    <string name="enumeration_field_nickname">ডাকনাম (যদি উপলব্ধ)</string>
+    <string name="enumeration_contact_primary">এই ব্যক্তি প্রাথমিক যোগাযোগ হতে যাচ্ছে?</string>
+    <string name="enumeration_provider">এই তথ্য উৎস</string>
+    <string name="enumeration_button_direct">সরাসরি</string>
+    <string name="enumeration_button_contact">যোগাযোগের মাধ্যমে</string>
+    <string name="enumeration_attend_screening_on_proposed_dates_question">প্রস্তাবিত তারিখ স্ক্রীনিং অংশগ্রহণ অংশগ্রহণকারী সক্ষম?</string>
+    <string name="enumeration_state_reason">কারণ বর্ণনা করুন</string>
+    <string name="enumeration_state_reason_option_1">স্ক্রীনিং তারিখের সময় অনুপলব্ধ</string>
+    <string name="enumeration_state_reason_option_2">গুরুতর অসুস্থতা</string>
+    <string name="enumeration_state_reason_field_other">নির্ধারন করুন</string>
+    <string name="enumeration_no_member">কোন নিবন্ধিত সদস্য খুঁজে পাওয়া যায় নি</string>
+    <string name="enumeration_unavailable">স্ক্রীনিং তারিখের সময় অনুপলব্ধ</string>
+    <string name="enumeration_location_not_available">অবস্থান তথ্য পাওয়া যায় না</string>
+    <string name="enumeration_explanation_permission_explainer_video">ব্যাখ্যাকারী ভিডিও</string>
+    <string name="enumeration_explanation_permission_modal_button_cancel">ক্যান্সেল এবং শুরু করতে</string>
+    <string name="enumeration_add_a_household_member_title">একটি পরিবারের সদস্য যোগ করুন</string>
+    <string name="enumeration_serious_illness">গুরুতর অসুস্থতা</string>
+    <string name="enumeration_contact_optional">* এই ব্যক্তি প্রাথমিক যোগাযোগ না হলে ঐচ্ছিক</string>
+    <string name="enumeration_household_members_above_18">18 বছরের বেশি বয়সের অন্য সদস্যরা কি পরিবারের সদস্য?</string>
+    <string name="enumeration_confirm_assign_id">নিশ্চিত করুন এবং আইডি বরাদ্দ</string>
+    <string name="enumeration_manual_invitation_id">আমন্ত্রণ আইডি লিখুন</string>
+    <string name="enumeration_button_assign_invitation_id">অ্যাসাইন ইমিগ্রেশন আইডি</string>
+    <string name="enumeration_household_members_confirmation_notice1">আপনি কি নিশ্চিত যে আপনি 18 বছর বয়সের উপরে পরিবারের সদস্যদের যোগ করতে পেরেছেন?</string>
+    <string name="enumeration_household_members_confirmation_notice2">শুধুমাত্র সদস্য যার প্রোফাইল সম্পন্ন হয় অধ্যয়ন অংশগ্রহণের জন্য যোগ্য।</string>
+    <string name="enumeration_confirmation_button_assign_id">আইডি বরাদ্দ</string>
+    <string name="enumeration_confirmation_button_add_member">সদস্য যোগ করুন</string>
+    <string name="enumeration_field_postcode">পিন কোড</string>
+    <string name="enumeration_invitation_id_assigned_title">আমন্ত্রণ আইডি হস্তান্তর</string>
+    <string name="enumeration_invitation_id_assigned">আমন্ত্রণ আইডি বরাদ্দ</string>
+    <string name="enumeration_invitation_id_handover_button_finish">পরিমাপ শেষ</string>
+    <string name="enumeration_primary_contact">প্রাথমিক যোগাযোগ</string>
+    <string name="enumeration_set_primary_contact">প্রাথমিক হিসাবে সেট করুন</string>
+    <string name="enumeration_explanation_permission_modal_cancel_title">গণনা বাতিল করার কারণ</string>
+    <string name="enumeration_explanation_permission_modal_cancel_option_1">কেউ নেই বাড়ি</string>
+    <string name="enumeration_explanation_permission_modal_cancel_option_2">অনুমতি প্রদান করার জন্য উপলব্ধ কোন প্রাপ্তবয়স্ক</string>
+    <string name="enumeration_explanation_permission_modal_cancel_option_3">অনুমতি প্রদান করা হয় না</string>
+    <string name="enumeration_button_assign_invitation_id_title">পরিবারের পরিমাপ আইডি বরাদ্দ</string>
+    <string name="enumeration_household_members_title">পরিবারের সদস্যগন</string>
+    <string name="enumeration_error_location_services">অবস্থান পরিষেবা চালু আছে এবং আবার চেষ্টা করুন তা নিশ্চিত করুন</string>
+    <string name="enumeration_search_bar">আমন্ত্রণ আইডি / ঠিকানা / ফোন / অংশগ্রহণকারী নাম</string>
+    <string name="enumeration_invitation_id">আমন্ত্রণ আইডি</string>
+    <string name="enumeration_no_households_visited">কোন পরিবারের এখনো পরিদর্শন</string>
+    <string name="enumeration_handover_notice">প্রাথমিক যোগাযোগের জন্য QR কোড সহ 3 অ্যাপয়েন্টমেন্ট কার্ড দিন। স্বাস্থ্য সুরক্ষা চেকপয়েন্ট এপয়েন্টমেন্ট করার সময় এটি নিরাপদ রাখতে এবং এটি আনতে বলুন।</string>
+    <string name="enumeration_12_months_stay_question">আগামী 1২ মাসে বাড়ির বেশিরভাগ ক্ষেত্রে পরিবারের সদস্য থাকবেন?</string>
+
+    <string name="fundus_explanation_1">ফান্ডসকপিটি একটি সাধারণ পরীক্ষা যা অংশগ্রহণকারীর চোখের পিছনে নজর রাখতে এবং চোখের রোগগুলির জন্য পর্দায় রুটিন পরীক্ষা করে।</string>
+    <string name="fundus_camera_app">2. Fundus ক্যামেরা অ্যাপ্লিকেশন</string>
+    <string name="fundus_explanation_2">অংশগ্রহণকারীদের ফান্ডসকপি পদ্ধতি ব্যাখ্যা করুন। একবার সম্পন্ন, নিচে নিশ্চিত করুন।</string>
+    <string name="fundus_measurement">ফান্ডাস ক্যামেরা ডিভাইস ব্যবহার করে পরিমাপ সম্পাদন করুন এবং আউটপুট ক্যাপচার করুন</string>
+    <string name="fundus_guide_text">ফান্ডাস বারকোড রিডার ব্যবহার করে অংশগ্রহণকারী আইডি স্ক্যান করুন এবং নিশ্চিত করুন যে আইডিটি সঠিকভাবে ধরা হয়</string>
+    <string name="fundus_manual_enter">অথবা নিজে স্ক্রিনিং আইডিটি ফান্ডাস ডিভাইসে প্রবেশ করান</string>
+    <string name="string_funduscopy_age_confirm">ডিভাইসে বয়স এবং লিঙ্গ লিখুন এবং নিশ্চিত করুন।</string>
+    <string name="string_funduscopy_given_consent">রোগী সম্মতি দিয়েছেন</string>
+    <string name="fundus_output_check">আউটপুট ভাল হয়, নিচে নিশ্চিত করুন। অন্যথায় পদ্ধতি বা ক্যাপচার করতে অক্ষম চিহ্নিত করুন।</string>
+    <string name="fundus_failure_details">ব্যর্থতা বিবরণ</string>
+    <string name="fundus_failure_problematic_eye">সমস্যাযুক্ত চোখ</string>
+    <string name="fundus_failure_left_eye">বাম চোখ</string>
+    <string name="fundus_failure_right_eye">ডান চোখ</string>
+    <string name="fundus_failure_both_eyes">উভয় চোখ</string>
+    <string name="fundus_failure_problem_with">সঙ্গে সমস্যা?</string>
+    <string name="fundus_failure_machine">মেশিন</string>
+
+    <string name="menu_startservice">Logcat সেবা শুরু করুন</string>
+    <string name="menu_stopservice">Logcat সেবা বন্ধ করুন</string>
+    <string name="menu_settings">সেটিংস</string>
+    <string name="menu_initialize_settings">সেটিংস আরম্ভ করুন</string>
+
+
+    <string name="storage_permission_denied_message">আপনি স্টোরেজ জন্য অনুমতি প্রয়োজন।</string>
+    <string name="storage_enter_bag_id">ব্যাগ আইডি লিখুন</string>
+    <string name="storage_scan_qr_code_title">প্রক্রিয়াজাত নমুনার ব্যাগ উপর QR কোড স্ক্যান করুন</string>
+    <string name="storage_storage_manual_bag_id_entry">ম্যানুয়াল ব্যাগ আইডি এন্ট্রি</string>
+    <string name="storage_sample_storage_title">নমুনা সংগ্রহস্থল</string>
+    <string name="storage_no_pending_samples">কোন অমীমাংসিত নমুনা</string>
+    <string name="storage_begin_storage">স্টোরেজ শুরু করুন</string>
+    <string name="scan_the_qr_code_attached_to_the_bag">ব্যাগ সংযুক্ত QR কোড স্ক্যান করুন।</string>
+    <string name="storage_id">সংগ্রহস্থল আইডি</string>
+    <string name="storage_key_steps_1">মূল পদক্ষেপ</string>
+    <string name="storage_key_steps_2">সমস্ত রক্তের নমুনা অপ্রয়োজনীয় [প্রস্রাব নমুনা না]</string>
+    <string name="storage_key_steps_3">সঠিক cryotube মধ্যে রক্ত নমুনা pipette</string>
+    <string name="storage_key_steps_4">ক্রিটোটুব আইডি নমুনা টিউবে ল্যাবরেটরি আইডি সাথে মিলে যায় তা নিশ্চিত করুন</string>
+    <string name="storage_key_steps_5">ট্রে মধ্যে ক্রিটোবুদ ফিরে রাখুন</string>
+    <string name="storage_key_steps_6">ফ্রীজার বক্সে ট্রে রাখুন</string>
+    <string name="storage_centrifuge_conformation">আমি centrifuged এবং নমুনা ক্রিটোব্বস নমুনা স্থানান্তর করা হয়েছে</string>
+    <string name="storage_freezer_box_id">ফ্রিজার বক্স আইডি</string>
+    <string name="storage_complete_cryotube_storage">সম্পূর্ণ ক্রিটোবube স্টোরেজ</string>
+
+
+    <string name="string_household_visited">পরিবারের আজ পরিদর্শন</string>
+    <string name="string_enumerated_today">ব্যক্তি আজ enumerated</string>
+    <string name="string_station">স্টেশন</string>
+    <string name="string_devices">ডিভাইস</string>
+    <string name="string_more">অধিক</string>
+    <string name="out_of">বাইরে</string>
+    <string name="revisit_household">পরিবারের পুনর্বিবেচনা</string>
+
+    <string name="hint_household_identifire"> পারিবারিক আইডেন্টিফায়ার</string>
+
+    <string name="hint_distric_name">জেলা নাম (যদি প্রযোজ্য হয়)</string>
+    <string name="label_geo_location">ভূ-অবস্থানের তথ্য নিবন্ধন করার আগে আপনি বাড়ির প্রাঙ্গনে রয়েছেন তা নিশ্চিত করুন।</string>
+    <string name="btn_text_register_geolocation">ভৌগলিক অবস্থান তথ্য নিবন্ধন করুন</string>
+
+    <string name="string_sonsents_ex3">আমরা পরিবারের কাছ থেকে স্ক্রীনিং উপস্থিত ছিলেন যারা ট্র্যাক করবে</string>
+    <string name="string_consents_ex4">আরও জরিপ তাদের রিপোর্টের উপর ভিত্তি করে তাদের জন্য একটি ব্যক্তিগতকৃত যত্ন পরিকল্পনা তৈরি করতে সাহায্য করতে পারে।</string>
+
+    <string name="retake_geolocation_data">ভূগোল অবস্থান তথ্য পুনরুদ্ধার</string>
+    <string name="hello_blank_fragment">হ্যালো ফাঁকা ফাটল</string>
+    <string name="string_header_barcode_gen">বারকোড প্রজন্মের</string>
+    <string name="header_scan_bar_code">স্ক্যান বার কোড</string>
+
+    <string name="lb_has_nic">জাতীয় আইডি আছে?</string>
+
+    <string name="string_dont_know">জানি না</string>
+
+    <string name="string_bday_determine">কিভাবে জন্ম তারিখ নির্ধারিত ছিল?</string>
+    <string name="string_age_nic">জাতীয় আইডি</string>
+    <string name="string_age_bcert">জন্ম সনদ</string>
+    <string name="string_age_school_cert">স্কুল সার্টিফিকেট</string>
+    <string name="string_age_repondent">প্রতিক্রিয়াশীল এর বিবৃতি অনুযায়ী</string>
+    <string name="string_age_other">অন্যদের, দয়া করে উল্লেখ করুন</string>
+    <string name="string_years">বছর</string>
+    <string name="string_hh_last_three_month">গৃহকর্তার সদস্য ঘরে অবস্থানের সময়ে আমি কি গত 3 মাসে বেশিরভাগ সময় থাকি?</string>
+    <string name="string_special_circumstance">বিশেষ পরিস্থিতিতে (প্রযোজ্য হলে)</string>
+    <string name="string_unable_speak">বধির / কথা বলতে অক্ষম</string>
+    <string name="major_psychiatric_issue">প্রধান মানসিক সমস্যা</string>
+    <string name="string_stay_abroad">বিদেশে থাকে</string>
+    <string name="string_leave_short">সংক্ষিপ্ত সময়ের জন্য ছুটিতে</string>
+    <string name="string_abroad_soon">শীঘ্রই বিদেশে যেতে হবে</string>
+    <string name="string_special_circums_other">অন্যান্য (দয়া করে নির্দিষ্ট করুন)</string>
+
+    <string name="action_settings">সেটিংস</string>
+    <string name="help_save">ফাইল নাম</string>
+    <string name="btn_save">সংরক্ষণ করুন</string>
+    <string name="btn_sendmail">মেল</string>
+    <string name="btn_update">হালনাগাদ</string>
+    <string name="btn_clear">পরিষ্কার</string>
+    <string name="btn_loglevel">LogLevel</string>
+    <string name="btn_delete_log_file">মুছে ফেলা</string>
+
+
+    <string name="save_complete">লগ ফাইল সংরক্ষিত ছিল।</string>
+    <string name="save_failed">লগ ফাইল সংরক্ষণ করতে ব্যর্থ হয়েছে।</string>
+    <string name="service_started">Logcat সেবা শুরু।</string>
+    <string name="service_stopped">Logcat সেবা বন্ধ।</string>
+    <string name="service_warning">Logcat সেবা শুরু হয় না।</string>
+    <string name="delete_file_failed">লগ ফাইল মুছে ফেলতে ব্যর্থ।</string>
+    <string name="delete_file_complete">লগ ফাইল মুছে ফেলা হয়েছে।</string>
+    <string name="bluetooth_doesnt_work">ব্লুটুথ এই ডিভাইসে কাজ করছে না। \ N দয়া করে ব্লুটুথ সক্ষম করুন।</string>
+    <string name="confirm_pairing_request">Pairing অনুরোধ নিশ্চিত করুন।</string>
+    <string name="connect">সংযোগ করা</string>
+    <string name="connecting">সংযুক্ত হচ্ছে ...</string>
+    <string name="disconnect">বিযুক্ত করা</string>
+    <string name="disconnecting">সংযোগ বিচ্ছিন্ন হচ্ছে ...</string>
+    <string name="enable_bt">বিটি সক্ষম করুন</string>
+    <string name="disable_bt">বিটি নিষ্ক্রিয় করুন</string>
+    <string name="location_permission_denied_message">আপনি অবস্থান সেবা জন্য অনুমতি প্রয়োজন।</string>
+
+    <string name="decibel_dbm">% 1 $ d dBm</string>
+    <string name="milli_second">% 1 $ d মি</string>
+    <string name="scan_start_failed_message">"স্ক্যান শুরু ব্যর্থ হয়েছে।"</string>
+    <string name="scan_stop_message">"স্ক্যান বন্ধ।"</string>
+    <string name="raw_data_title">মূল তথ্য:</string>
+    <string name="ad_structure_details_title">বিবরণ:</string>
+    <string name="ad_structure_length">কেবলমাত্র</string>
+    <string name="ad_structure_type">প্রকার</string>
+    <string name="ad_structure_value">VALUE না</string>
+    <string name="bond_state_none">বন্ড না</string>
+    <string name="bond_state_bonding">বন্ধন</string>
+    <string name="bond_state_bonded">জোড়া</string>
+    <string name="bond_state_unknown">বন্ড রাজ্য অকস্মাৎ</string>
+
+    <string name="category_connection_settings">সংযোগ পরামিতি</string>
+    <string name="category_communication_settings">যোগাযোগ পরামিতি</string>
+    <string name="category_disconnection_settings">বিচ্ছিন্নতা পরামিতি</string>
+    <string name="category_error_settings">ত্রুটি সেটিংস</string>
+
+    <string name="key_assist_pairing_dialog">key_assist_pairing_dialog</string>
+    <string name="title_assist_pairing_dialog">সহযোগী জোড়া ডায়ালগ</string>
+
+    <string name="key_use_create_bond">key_use_create_bond</string>
+    <string name="title_use_create_bond">CreateBond ব্যবহার করুন</string>
+
+    <string name="key_auto_pairing_enabled">key_auto_pairing_enabled</string>
+    <string name="title_auto_pairing_enabled">অটো জুতা</string>
+
+    <string name="key_auto_pairing_pin_code">key_auto_pairing_pin_code</string>
+    <string name="title_auto_pairing_pin_code">পিনকোড</string>
+
+    <string name="key_stable_connection_enabled">key_stable_connection_enabled</string>
+    <string name="title_stable_connection_enabled">স্থিতিশীল সংযোগ</string>
+
+    <string name="key_stable_connection_wait_time">key_stable_connection_wait_time</string>
+    <string name="title_stable_connection_wait_time">স্থিতিশীল সংযোগ অপেক্ষা সময়</string>
+
+    <string name="key_connection_retry_enabled">key_connection_retry_enabled</string>
+    <string name="title_connection_retry_enabled">সংযোগ পুনরায় চেষ্টা করুন</string>
+
+    <string name="key_connection_retry_delay_time">key_connection_retry_delay_time</string>
+    <string name="title_connection_retry_delay_time">সংযোগ পুনরায় বিলম্ব বিলম্ব সময়</string>
+
+    <string name="key_connection_retry_count">key_connection_retry_count</string>
+    <string name="title_connection_retry_count">সংযোগ পুনরায় চেষ্টা করুন</string>
+
+    <string name="key_discover_service_retry_enabled">key_discover_service_retry_enabled</string>
+    <string name="title_discover_service_retry_enabled">সার্ভিস পুনরায় চেষ্টা আবিষ্কার করুন</string>
+
+    <string name="key_discover_service_retry_delay_time">key_discover_service_retry_delay_time</string>
+    <string name="title_discover_service_retry_delay_time">সার্ভিস পুনরূদ্ধার বিলম্ব সময় আবিষ্কার করুন</string>
+
+    <string name="key_discover_service_retry_count">key_discover_service_retry_count</string>
+    <string name="title_discover_service_retry_count">সার্ভিস পুনরায় চেষ্টা গণনা আবিষ্কার করুন</string>
+
+    <string name="key_write_cts">key_write_cts</string>
+    <string name="title_write_cts">সিটিএস লিখুন</string>
+
+    <string name="key_use_remove_bond">key_use_remove_bond</string>
+    <string name="title_use_remove_bond">RemoveBond ব্যবহার করুন</string>
+
+    <string name="key_use_refresh_gatt">key_use_refresh_gatt</string>
+    <string name="title_use_refresh_gatt">রিফ্রেশ গ্যাট ব্যবহার করুন</string>
+
+    <string name="summary_format_time">% 1 $s মি</string>
+    <string name="side_menu_data_management">ডাটা ব্যাবস্থাপনা</string>
+    <string name="user_profile">ব্যবহারকারী প্রোফাইল</string>
+    <string name="settings">সেটিংস</string>
+    <string name="string_other">অন্যান্য</string>
+    <string name="age_years">% s বছর</string>
+    <string name="hint_name">পুরো নাম</string>
+    <string name="lb_photo">না</string>
+    <string name="guid_profile">পরিচয় নিশ্চিত করুন এবং অবিরত</string>
+    <string name="hint_father_name">বাবার নাম</string>
+    <string name="hint_nid">জাতীয় আইডি নম্বর</string>
+
+    <string name="hint_weight">ওজন</string>
+
+    <string name="home_sample_management">নমুনা ব্যবস্থাপনা</string>
+    <string name="sample_management_storage">সংগ্রহস্থল</string>
+    <string name="home_reports">প্রতিবেদন</string>
+    <string name="sample_management_processing">প্রসেসিং</string>
+    <string name="ecg_intro">একটি ইলেক্ট্রোকার্ডিওোগ্রাম একটি সহজ, ব্যথাহীন পরীক্ষা যা আপনার হৃদয়ের বৈদ্যুতিক ক্রিয়াকলাপকে পরিমাপ করে। এটি একটি ইসিজি বা ইকেজি নামেও পরিচিত।</string>
+    <string name="registration_register_a_participant">একটি অংশগ্রহণকারী নিবন্ধন করুন</string>
+
+
+    <string name="string_syncing_images">ছবি সিঙ্ক করা হচ্ছে</string>
+    <string name="string_complete">সম্পূর্ণ</string>
+    <string name="string_fundos_error">অনুপস্থিত ইনপুট আছে</string>
+    <string name="string_fundo_sync_again">ছবি এগিয়ে যাওয়ার জন্য গ্রহণ করা প্রয়োজন। আবার সিঙ্ক করার চেষ্টা করুন</string>
+    <string name="string_scan_barcode">ফান্ডাস ক্যামেরা বারকোড রিডার সহ নীচের বারকোড স্ক্যান করুন এবং পরবর্তী চাপুন।</string>
+
+
+
+    <string name="spirometry_title">spirometry</string>
+    <string name="spirometry_intro">স্পাইরোমেট্রি একটি আদর্শ পরীক্ষা যা পরিমাপকারীর ফুসফুসের কার্যকারিতা কতটা ভাল তা পরিমাপ করতে ব্যবহৃত হয়। পরীক্ষা ফুসফুস মধ্যে এবং বাইরে airflow পরিমাপ করে কাজ করে।</string>
+    <string name="spirometry_explanation">অংশগ্রহণকারীদের স্পিরিমেট্রি পদ্ধতি ব্যাখ্যা করুন। একবার সম্পন্ন, নিচে নিশ্চিত করুন।</string>
+    <string name="spirometry_error_message">কমপক্ষে 3 টি অধ্যয়ন এগিয়ে যেতে হবে</string>
+    <string name="spirometry_device_not_connected">Spirometry ডিভাইস সংযুক্ত না</string>
+    <string name="spirometry_test">পরীক্ষা</string>
+    <string name="spirometry_test_limit">এগিয়ে যেতে অন্তত 3 পরীক্ষা সঞ্চালন</string>
+    <string name="spirometry_add_record_message">পরীক্ষার জন্য স্পিরিওমিটি অ্যাপ্লিকেশনটি খুলুন এবং আপনার কাজ শেষ হওয়ার পরে ফলাফলটি রেকর্ড করুন।</string>
+    <string name="spirometry_perform_tests">পরীক্ষা সঞ্চালন করুন</string>
+    <string name="spirometry_how_to">কিভাবে একটি spirometry পরীক্ষা করবেন</string>
+    <string name="spirometry_record_test_data">রেকর্ড পরীক্ষা তথ্য</string>
+    <string name="spirometry_fev1">FEV1</string>
+    <string name="spirometry_liters">লিটার</string>
+    <string name="spirometry_fvc">FVC</string>
+    <string name="spirometry_fev1_fvc_ratio">FEV1 / এফভিসি অনুপাত</string>
+    <string name="spirometry_button_record_measurement">রেকর্ড পরিমাপ</string>
+    <string name="fevc">FEVC</string>
+    <string name="spirometry_tests">টেস্ট</string>
+    <string name="spirometry_add_test">পরীক্ষা যোগ করুন</string>
+
+    <string name="ecg_measurement">ইসিজি মেশিন ব্যবহার করে পরিমাপ সম্পাদন করুন এবং মুদ্রণযন্ত্রের ট্রেসটি পরীক্ষা করুন</string>
+    <string name="ecg_measurement_assessment">যদি ট্রেস ভাল হয়, নিচে নিশ্চিত করুন। অন্যথায় পদ্ধতি পুনরাবৃত্তি বা চিহ্ন অক্ষম।</string>
+    <string name="ecg_measurement_failed_title">ব্যর্থতার কারণ</string>
+    <string name="ecg_instructions">অংশগ্রহণকারীকে electrocardiogram পদ্ধতি ব্যাখ্যা করুন। একবার সম্পন্ন, নিচে নিশ্চিত করুন।</string>
+    <string name="ecg_explain_confirmation">পদ্ধতি অংশগ্রহণকারী ব্যাখ্যা করা হয়েছে</string>
+    <string name="ecg_safety">অংশগ্রহণকারীর কাছ থেকে ইলেকট্রনিক ডিভাইসগুলি (উদাঃ স্মার্টফোন) সরানো নিশ্চিত করুন। এই ডিভাইসগুলি আর্টিফ্যাক্ট (হস্তক্ষেপ) তৈরি করতে পারে এবং পঠনগুলির সমস্যাগুলি সৃষ্টি করতে পারে।</string>
+    <string name="ecg_trace_complete">ট্রেস সম্পূর্ণ</string>
+    <string name="ecg_measurement_unable_to_capture">ক্যাপচার করতে অক্ষম</string>
+    <string name="ecg_unable_to_obtain_reading">একটি পড়তে পারে না</string>
+    <string name="ecg_participant_refused">অংশগ্রহণকারী প্রত্যাখ্যান</string>
+    <string name="ecg_machine_malfunctioned">মেশিন malfunctioned</string>
+    <string name="ecg_other_example">উদাহরণস্বরূপ অংশগ্রহণকারী নিচে মিথ্যা অক্ষম</string>
+    <string name="ecg_check">কিভাবে ট্রেস ছিল?</string>
+    <string name="ecg_how_1">1. কিভাবে একটি ইসিজি করবেন</string>
+    <string name="ecg_input">ইনপুট</string>
+    <string name="ecg_trace">চিহ্ন</string>
+    <string name="ecg_scan_participant_id">ইসিজি বারকোড পাঠক ব্যবহার করে অংশগ্রহণকারী আইডি স্ক্যান করুন এবং নিশ্চিত করুন যে ID সঠিকভাবে ধরা হয়</string>
+    <string name="ecg_manually_enter_participant_id">অথবা নিজে ইসিজি ডিভাইসে অংশগ্রহণকারী আইডি লিখুন</string>
+    <string name="ecg_gender">ডিভাইসে বয়স এবং লিঙ্গ লিখুন এবং নিশ্চিত করুন।</string>
+    <string name="ecg_information_correct">আমি নিশ্চিত যে তথ্য সঠিক</string>
+    <string name="ecg_check_normal">সাধারণ</string>
+    <string name="ecg_check_abnormal">অস্বাভাবিক</string>
+    <string name="ecg_title">হৃদ্যন্ত্রের চিত্রাঙ্কলেখ</string>
+
+
+    <string name="processing_relabel_confirmation">আমি ল্যাবরেটরি লেবেল সহ নমুনা প্যাকে সমস্ত পাত্রে re_labled করেছি</string>
+    <string name="sample_id">নমুনা আইডি</string>
+    <string name="processing_instructions_scan_barcode">নমুনা যাচাই এবং নমুনা যাচাই নমুনা ব্যাগ উপর বারকোড স্ক্যান করুন</string>
+    <string name="processing_scan_tube_barcode">টিউব বারকোড স্ক্যান করুন</string>
+    <string name="processing_error_id_not_valid">নমুনা আইডি বৈধ নয়</string>
+    <string name="processing_collected">সংগৃহীত</string>
+    <string name="processing_link_laboratory_label">ল্যাবরেটরি লেবেলগুলির পরবর্তী সেটটি সনাক্ত করুন এবং লিঙ্ক তৈরির জন্য QR কোডটি স্ক্যান করুন</string>
+    <string name="processing_scan_the_qr_code">QR কোড স্ক্যান করুন</string>
+    <string name="processing_link_complete">লিঙ্ক সম্পূর্ণ। লিঙ্ক আইডি:</string>
+    <string name="processing_redo_link">লিঙ্ক পুনরায় করুন</string>
+    <string name="current_temperature">বর্তমান তাপমাত্রা</string>
+    <string name="processing_probe_id">অনুসন্ধান আইডি</string>
+    <string name="processing_fbg">FBG</string>
+    <string name="processing_mmol_l">mmol / L</string>
+    <string name="processing_run_test">পরীক্ষা চালান</string>
+    <string name="processing_fbg_instructions">উপরের সব পরীক্ষার সমাপ্তির পরে, রক্তের গ্লুকোজ শেষ করার জন্য নিচের টিপুন</string>
+    <string name="processing_fbg_complete">সম্পূর্ণ রক্তের গ্লুকোজ</string>
+    <string name="processing_janacare">Jncre</string>
+    <string name="processing_hba1c">HbA1c</string>
+    <string name="processing_hba1c_instructions">উপরের সমস্ত পরীক্ষার সমাপ্তির পরে, HbA1c শেষ করতে নিচের টিপুন</string>
+    <string name="processing_hba1c_complete">সম্পূর্ণ HbA1c</string>
+    <string name="processing_2h_ogtt">2 এইচ অ্যান্টট</string>
+    <string name="processing_2h_ogtt_instructions">উপরের সমস্ত পরীক্ষার সমাপ্তির পরে, 2H OGTT শেষ করতে নিচের টিপুন</string>
+    <string name="processing_2h_ogtt_complete">সম্পূর্ণ 2H OGTT</string>
+    <string name="processing_aina_connected">আইএনএ ডিভাইস সংযুক্ত করা হয়</string>
+    <string name="error_processing_not_complete">দয়া করে \'লিপিড প্রোফাইল \' এবং অবশিষ্ট পরীক্ষার অন্তত একটি সম্পূর্ণ করুন</string>
+    <string name="standard_temperature">স্ট্যান্ডার্ড তাপমাত্রা</string>
+    <string name="processing_instructions_2ml">নীচের পরীক্ষার জন্য ব্যবহার করতে ব্যাগ থেকে 2 এমএল নমুনা টিউব নিন।</string>
+    <string name="processing_lipid_profile">লিপিড প্রোফাইল</string>
+    <string name="processing_fasting_blood_glucose">রক্তের গ্লুকোজ রোজা রাখা</string>
+    <string name="processing_completion_instructions_1">উপরে পরীক্ষা শেষ করার পরে:</string>
+    <string name="processing_completion_instructions_2">1. প্যাকের অবশিষ্ট রক্তটি 2 এমএল পোকা ইডিটিএ নল থেকে প্যাকে সংশ্লিষ্ট লেবেলযুক্ত CRYOTUBE</string>
+    <string name="processing_completion_instructions_3">2. নমুনা ব্যাগের মধ্যে সমস্ত নমুনা টিউব (6 রক্ত, 1 টি প্রস্রাব) এবং ক্রিটোটুব রাখুন এবং প্রক্রিয়াকরণের জন্য পরবর্তী প্রযুক্তিবিদকে প্রেরণ করুন</string>
+    <string name="processing_completion_instructions_4">3. এই সব টিউব একটি "ল্যাবরেটরি লেবেল" সঙ্গে লেবেল করা উচিত</string>
+    <string name="continue_to_storage">স্টোরেজ অবিরত</string>
+    <string name="processing_complete_processing">সম্পূর্ণ প্রক্রিয়াকরণ</string>
+    <string name="processing_lipids_tc">মোট কলেস্টেরল</string>
+    <string name="processing_lipids_hdl_optional">এইচডিএল (ঐচ্ছিক)</string>
+    <string name="processing_lipids_tg_optional">Triglycerides (ঐচ্ছিক)</string>
+    <string name="processing_lipids_ldl_optional">LDL_C (ঐচ্ছিক)</string>
+    <string name="processing_lipids_instructions">উপরের সমস্ত পরীক্ষার সমাপ্তির পরে, লিপিড প্রোফাইলটি শেষ করার জন্য নিচের টিপুন</string>
+    <string name="processing_lipids_complete">সম্পূর্ণ লিপিড প্রোফাইল</string>
+    <string name="processing_collected_by">দ্বারা সংগৃহীত</string>
+    <string name="processing_collected_on">উপর সংগৃহীত</string>
+    <string name="processing_enter_tube_id">নল আইডি লিখুন</string>
+    <string name="processing_manual_tube_id_title">ম্যানুয়াল টিউব আইডি এন্ট্রি</string>
+    <string name="processing_manual_lab_id_title">ম্যানুয়াল ল্যাবরেটরি লেবেল ID এন্ট্রি</string>
+    <string name="processing_manual_lab_id_field">নির্ধারিত ল্যাবরেটরি লেবেল আইডি নম্বর</string>
+    <string name="processing_back_to_scanner">স্ক্যানার ফিরে</string>
+    <string name="processing_failure_broken">Testube (গুলি) ভাঙা</string>
+    <string name="processing_failure_reason">কেন re_labeling ব্যর্থ হয়েছে?</string>k
+    <string name="processing_failure_missing">Testube (গুলি) অনুপস্থিত</string>
+    <string name="processing_scan_bag_barcode">স্ক্যান ব্যাগ বারকোড</string>
+    <string name="processing_instuctions_scan_laboratory_label">নির্ধারিত ল্যাবরেটরি লেবেল QR কোড স্ক্যান করুন</string>
+    <string name="string_storage_scan_qr_message">QR কোড স্ক্যান করুন দয়া করে</string>
+
+
+    <string name="registration_household_details">পরিবারের বিবরণ</string>
+    <string name="registration_e_mail_address">ইমেল ঠিকানা (ঐচ্ছিক)</string>
+
+    <string name="registration_participants_details">অংশগ্রহণকারীর বিস্তারিত</string>
+    <string name="registration_identification">সনাক্ত</string>
+    <string name="registration_basic_details">মৌলিক বিবরণ</string>
+    <string name="explanation">ব্যাখ্যা</string>
+    <string name="next">পরবর্তী</string>
+    <string name="registration_contact_contact_phone_number_2_optional">যোগাযোগের ফোন নম্বর 2 (ঐচ্ছিক)</string>
+    <string name="registration_contact_contact_phone_number_1">যোগাযোগের ফোন নম্বর 1</string>
+    <string name="registration_contact_address">যোগাযোগের ঠিকানা</string>
+    <string name="registrationdetails_of_someone_close">কেউ বন্ধ বিবরণ</string>
+    <string name="registration_preregistration_title">Pre_registration চেকলিস্ট</string>
+    <string name="registration_preregistration_age">অংশগ্রহণকারী কি 18 বছর বয়সী?</string>
+    <string name="registration_preregistration_underage">অংশগ্রহণকারী যোগ্য নয়। আপনি স্ক্রীনিং অবিরত করতে পারবেন না</string>
+    <string name="registration_preregistration_resident">অংশগ্রহণকারী নজরদারি এলাকায় একটি বাসিন্দা হয়?</string>
+    <string name="registration_preregistration_fasting">অংশগ্রহণকারী দ্রুত কি?</string>
+    <string name="registration_preregistration_fasting_question">অংশগ্রহণকারী দ্রুত কতদিন ধরে?</string>
+    <string name="registration_preregistration_fasting_duration">রোযা সময়কাল</string>
+    <string name="hours">ঘন্টার</string>
+    <string name="registration_preregistration_fasting_fail">অংশগ্রহণকারী অবশ্যই অন্তত 8 ঘন্টা (শুধুমাত্র পানি) জন্য অবশ্যই থাকতে হবে। Rebook।</string>
+    <string name="registration_preregistration_medication">অংশগ্রহণকারী কি ওষুধ গ্রহণ করছে?</string>
+    <string name="registration_preregistration_nid">অংশগ্রহণকারী জাতীয় আইডি কার্ড হচ্ছে?</string>
+    <string name="registration_registration_confirmation_checklist">নিশ্চিতকরণ চেকলিস্ট</string>
+    <string name="registration_participant_id_assigned_successful">অংশগ্রহণকারী আইডি সফলভাবে বরাদ্দ</string>
+    <string name="registration_consent_explanation_1">আমরা আপনার মৌলিক তথ্য যেমন নাম, ডিওবি, উচ্চতা, ওজন, বিপি সংগ্রহ করব</string>
+    <string name="registration_consent_explanation_2">আপনার ফলাফল গুরুত্বপূর্ণ স্বাস্থ্য গবেষণা প্রতি অবদান রাখতে হবে</string>
+    <string name="registration_consent_explanation_3">একটি স্বাস্থ্য রিপোর্ট তৈরি করা হবে এবং আপনি প্রদান করা হয়</string>
+    <string name="registration_consent_explanation_4">যদি আপনার প্রয়োজন হয় তবে স্বাস্থ্যের প্রতিবেদনটি আপনার ডাক্তারের দ্বারা যত্নের পরিকল্পনা তৈরি করতে ব্যবহার করা যেতে পারে</string>
+    <string name="registration_consent_form_photo">স্বাক্ষরিত সম্মতি ফর্ম একটি ছবি নিন</string>
+    <string name="registration_select_household_member">অবিরত একটি পরিবারের সদস্য নির্বাচন করুন</string>
+    <string name="registration_participant_not_found">অংশগ্রহণকারী নাম খুঁজে পাওয়া যায় না, অংশগ্রহণকারী নিবন্ধিত করা উচিত কিনা তা নির্ধারণ করতে অধ্যয়ন সমন্বয়কারী পড়ুন</string>
+    <string name="registration_back_to_scanner">QR কোড স্ক্যানার ফিরে</string>
+    <string name="registration_scan_qr_code">অংশগ্রহণকারীর গণনার QR কোড স্ক্যান করুন</string>
+    <string name="registration_without_enumeration">কোন আমন্ত্রণ আইডি?</string>
+    <string name="registration_assign_participant_barcode">অংশগ্রহণকারী আইডি বরাদ্দ বারকোড স্ক্যান করুন</string>
+    <string name="string_new_registration_complete">রোগীর নিবন্ধন সফলভাবে সম্পন্ন হয়েছে</string>
+    <string name="registration_complete">নিবন্ধন সম্পন্ন</string>
+    <string name="registration_next_participant">পরবর্তী অংশগ্রহণকারী</string>
+    <string name="imageview">ImageView</string>
+    <string name="registration_completion_tasks">আপনি নীচের সব কাজ সম্পন্ন করেছেন তা নিশ্চিত করুন:</string>
+    <string name="registration_completion_instructions_1">স্ক্রিনিং চেকলিস্ট কার্ড এবং লাঠি বারকোড লেবেল বিস্তারিত বিবরণ পূরণ করুন</string>
+    <string name="registration_completion_instructions_2">ক্লিপবোর্ডে অংশগ্রহণকারীকে চেকলিস্ট সরবরাহ করুন</string>
+    <string name="registration_completion_instructions_3">পরবর্তী স্টেশন জন্য এগিয়ে যেতে হবে যেখানে নির্দেশাবলী প্রদান</string>
+    <string name="registration_completion_instructions_confirm">নিবন্ধন প্রক্রিয়া শেষ করতে "নিশ্চিত করুন" টিপুন।</string>
+    <string name="registration_identification_document">সনাক্তকরণ নথি</string>
+    <string name="registration_national_id">জাতীয় আইডি</string>
+    <string name="take_a_photo_of_national_id">জাতীয় আইডি একটি ছবি নিন</string>
+    <string name="registration_field_national_id_number">অংশগ্রহণকারীর জাতীয় আইডি নম্বর</string>
+    <string name="registration_contact_relationship">যোগাযোগের সাথে যোগাযোগ করুন</string>
+    <string name="registration_preregistration_nid_fail">অংশগ্রহণকারী যোগ্য নয়। আপনি স্ক্রীনিং অবিরত করতে পারবেন না</string>
+    <string name="registration_preregistration_check_list_complete_error">সব pre_registration প্রশ্নের উত্তর দয়া করে</string>
+
+
+    <string name="error_age">অবৈধ বয়স</string>
+    <string name="error_invalid_input">ভুল ইনপুট</string>
+    <string name="error_not_in_range">একটি পরিসীমা নেই</string>
+    <string name="error_error_there_are_missing_inputs">অনুপস্থিত ইনপুট আছে</string>
+    <string name="error_add_member_validation">অনুগ্রহ করে সকল আবশ্যিক ফিল্ডগুলি পূরণ করুন</string>
+
+
+    <string name="textview8">textView8</string>
+    <string name="full_name">পুরো নাম</string>
+    <string name="years">বছর</string>
+    <string name="dash">-</string>
+    <string name="body_composition">শারীরিক রচনা</string>
+    <string name="n_a">এন / এ</string>
+    <string name="cancel">বাতিল</string>
+    <string name="review">পর্যালোচনা</string>
+    <string name="verify_id">আইডি যাচাই করুন</string>
+    <string name="body_measurements_bp_title">শারীরিক পরিমাপ</string>
+    <string name="bp_measurements">মাপ</string>
+    <string name="bp_blood_pressure">রক্তচাপ</string>
+    <string name="bp_how_to_measure_bp">রক্ত চাপ পরিমাপ কিভাবে</string>
+    <string name="bp_add_a_bp_measurement">একটি বি.পি. পরিমাপ যোগ করুন</string>
+    <string name="bp_instructions_3">পরবর্তী বিপি পরিমাপ গ্রহণের আগে অংশগ্রহণকারীকে এক বা দুই মিনিটের জন্য বিশ্রাম নিতে হবে।</string>
+    <string name="bp_measurement_number">না।</string>
+    <string name="bp_measurement_arm">বাহু</string>
+    <string name="bp_measurement_diastolic">রক্তচাপ</string>
+    <string name="bp_measurement_skip">বিপি এড়িয়ে যাও</string>
+    <string name="bp_measurement_bp_short">বিপি</string>
+    <string name="bp_skip_reason_1">রোগীর কোন অস্ত্র আছে</string>
+    <string name="bp_skip_reason_2">রোগীর হাত টুকরো টুকরা করা হয়</string>
+    <string name="bp_device_not_connected">বিপি ডিভাইস সংযুক্ত না</string>
+    <string name="bp_instructions_1_1">মেঝে উপর সমতল তাদের ফুট সঙ্গে একটি চেয়ারে রোগী বসুন। তাদের বাম হাত একটি টেবিলে রাখুন যাতে কফ হৃদয়ের সাথে স্তরের হয়।</string>
+    <string name="bp_instructions_2">গবেষণা সম্পন্ন করতে কমপক্ষে 3 বিপি পরিমাপ সম্পাদন করুন</string>
+    <string name="bp_retake_message">আপনি কি নিশ্চিত, আপনি পুনরুদ্ধার করতে চান?</string>
+    <string name="bp_measurement_critical">জরুরী রেফারেল জন্য পর্যালোচনা</string>
+    <string name="bp_hip_size">হিপ সাইজ</string>
+    <string name="bp_waist_size">কোমরের মাপ</string>
+    <string name="bp_units_kg">কেজি</string>
+    <string name="bp_height">উচ্চতা</string>
+    <string name="bp_units_cm">সেমি</string>
+    <string name="bp_measurement_systolic">সিস্টোলিক</string>
+    <string name="bp_measurement_pulse_rate">নাড়ি</string>
+    <string name="blood_pressure_measurement_3">রক্তচাপ পরিমাপ 3</string>
+    <string name="bp_fat_composition">ফ্যাট গঠন</string>
+    <string name="bp_muscle">পেশী</string>
+    <string name="bp_visceral_fat">ভিসারাল ফ্যাট</string>
+    <string name="hip_size">হিপ সাইজ</string>
+    <string name="take_a_photo_of_the_measurement">পরিমাপ একটি ছবি নিন</string>
+    <string name="bp_retake">পুনরধিকার করা</string>
+    <string name="bp_successfully_submitted">শারীরিক পরিমাপ</string>
+    <string name="bp_instructions_1">মেঝে উপর সমতল তাদের ফুট সঙ্গে একটি চেয়ারে রোগী বসুন। তাদের বাম হাত একটি টেবিলে রাখুন যাতে কফ হৃদয়ের সাথে স্তরের হয়।</string>
+    <string name="bp_pair">যুক্ত করতে অথবা ডিভাইসে ইউনিট বোতাম টিপুন</string>
+    <string name="bp_record_bp">রেকর্ড BP</string>
+    <string name="bp_timestamp">টাইমস্ট্যাম্প</string>
+    <string name="bp_mean_arterial">অর্থ বাতুল</string>
+    <string name="bp_user_id">ব্যবহারকারীর প্রমানপত্র</string>
+    <string name="bp_body_movement">শরীরের নড়াচড়া</string>
+    <string name="bp_irregular_pulse">অনিয়মিত পালস</string>
+    <string name="bp_device_information">যন্ত্রের তথ্য</string>
+    <string name="bp_battery">ব্যাটারি</string>
+    <string name="bp_time">সময়</string>
+    <string name="bp_switch_to_manual">ম্যানুয়াল ইনপুট সুইচ</string>
+
+    <string name="manual_entry_participant_id">ম্যানুয়াল অংশগ্রহণকারী আইডি এন্ট্রি</string>
+    <string name="station">স্টেশন</string>
+    <string name="bio_manual_enter_sample_id">নমুনা আইডি লিখুন</string>
+    <string name="_2_electrode_application">2. ইলেক্ট্রোড অ্যাপ্লিকেশন</string>
+    <string name="_3_procedure_amp_measurements">3. প্রক্রিয়া</string>
+
+    <string name="please_confirm_the_information_is_correct">তথ্য সঠিক দয়া করে নিশ্চিত করুন</string>
+    <string name="please_ensure_the_procedure_was_explained_to_the_participant">পদ্ধতি অংশগ্রহণকারী ব্যাখ্যা করা হয়েছে তা নিশ্চিত করুন</string>
+    <string name="exact_placement_of_each_electrode_on_the_patient_is_important_incorrect_placement_can_lead_to_false_or_misleading_diagnosis">রোগীর প্রতিটি ইলেক্ট্রোড সঠিক স্থাপন করা গুরুত্বপূর্ণ। ভুল বসানো মিথ্যা বা বিভ্রান্তিকর নির্ণয়ের হতে পারে।</string>
+
+    <string name="complete">সম্পূর্ণ</string>
+    <string name="reason_for_ending_study">অধ্যয়ন শেষ করার কারণ</string>
+    <string name="faulty_device">ত্রুটিপূর্ণ ডিভাইস</string>
+    <string name="patient_had_to_leave_immediately">রোগীর অবিলম্বে ত্যাগ করতে হয়েছিল</string>
+    <string name="wrong_participant_linked">ভুল অংশগ্রহণকারী লিঙ্ক</string>
+    <string name="eg_participant_fainted">যেমন। অংশগ্রহণকারী হতাশ</string>
+
+    <string name="bio_scan_barcode_attached_to_bag">নমুনা ব্যাগ সংযুক্ত বারকোড স্ক্যান করুন</string>
+    <string name="bio_scan_bag_barcode">স্ক্যান নমুনা ব্যাগ বারকোড</string>
+    <string name="bio_instructions_1">অংশগ্রহণকারীর কাছ থেকে নমুনা আঁকুন এবং কীটের পাত্রে এটি বিতরণ করুন।</string>
+    <string name="bio_instructions_2">নমুনা সংগ্রহে জন্য নির্দেশাবলী</string>
+    <string name="bio_confirm_collection">সমস্ত নমুনা সংগৃহীত</string>
+    <string name="bio_button_collection_complete">নমুনা সংগ্রহ সম্পূর্ণ</string>
+    <string name="bio_collection_failed">সংগ্রহ ব্যর্থ হয়েছে</string>
+    <string name="bio_collection_title">নমুনা সংগ্রহ</string>
+    <string name="please_ask_the_participant_whether_or_not_they_have_been_fasting_consumed_nothing_other_than_water_for_at_least_8_hours_prior_to_the_collection">সংগ্রহের পূর্বে অন্তত 8 ঘন্টা আগে অংশগ্রহণকারীকে জিজ্ঞাসা করুন যে তারা রোজা রাখছে কিনা (পানির ব্যতীত অন্য কিছু খাওয়া হয়নি)।</string>
+    <string name="if_the_patient_has_been_fasting_proceed_with_the_blood_sample_collection">রোগীর রোজা রাখা হয়েছে, রক্ত নমুনা সংগ্রহে সঙ্গে এগিয়ে যান।</string>
+    <string name="proceed_to_collection">সংগ্রহ এগিয়ে যান</string>
+    <string name="patient_isn_t_fasting">রোগী রোযা নয়</string>
+    <string name="reschedule_visit">পুনঃনির্ধারণ দর্শন</string>
+    <string name="otherwise_reschedule_a_visit_and_remind_the_participant_to_avoid_any_sort_of_food_other_than_water_for_8_hours_prior_to_the_appointment">অন্যথায় একটি দর্শন পুনর্নির্মিত এবং অংশগ্রহণকারীকে অ্যাপয়েন্টমেন্টের আগে 8 ঘন্টা আগে কোনও ধরণের খাবার (পানি ব্যতীত) এড়াতে মনে করিয়ে দিন।</string>
+    <string name="got_it">বুঝেছি</string>
+    <string name="bio_collection_failed_reason">নমুনা সংগ্রহ ব্যর্থতার জন্য কারণ</string>
+    <string name="bio_collection_failed_arms">অংশগ্রহণকারী কোন অস্ত্র আছে</string>
+    <string name="bio_collection_failed_veins">শিরা খুঁজে পাইনি</string>
+    <string name="other">অন্যান্য</string>
+    <string name="bio_instructions_1_1">একটি নমুনা সংগ্রহ প্যাক আপ নিন</string>
+    <string name="bio_bag_contents">ব্যাগ থাকা উচিত</string>
+    <string name="bio_scan_sample_id_barcode">অংশগ্রহণকারীদের সাথে লিঙ্ক করার জন্য কিট-এ বারকোড স্ক্যান করুন</string>
+    <string name="scan_the_barcode">বারকোড স্ক্যান করুন</string>
+    <string name="bio_manual_sample_id_entry">ম্যানুয়াল নমুনা আইডি এন্ট্রি</string>
+    <string name="report_title">প্রতিবেদন</string>
+    <string name="questionnaire">প্রশ্নাবলী</string>
+    <string name="reading">পড়া</string>
+    <string name="patient">ধৈর্যশীল</string>
+    <string name="registered_geolocation_data">নিবন্ধিত ভৌগলিক অবস্থান তথ্য।</string>
+    <string name="imageviewvideo">imageviewVideo</string>
+    <string name="permission">অনুমতি</string>
+    <string name="imageviewnumber">imageViewNumber</string>
+    <string name="contact_name">যোগাযোগের নাম</string>
+    <string name="add_another_household_member">অন্য পরিবারের সদস্য যোগ করুন</string>
+    <string name="area_village_district">ফোন / গ্রাম / জেলা</string>
+    <string name="address">ঠিকানা</string>
+    <string name="take_photo">ছবি তোল</string>
+    <string name="devices">ডিভাইস</string>
+    <string name="log_out">প্রস্থান</string>
+    <string name="photo">ছবি</string>
+    <string name="capture_clear_photo_of_the_participant_facing_straight_at_the_camera">ক্যামেরা সরাসরি মুখোমুখি অংশগ্রহণকারী পরিষ্কার ছবি ক্যাপচার।</string>
+    <string name="take_a_photo_of_participant">অংশগ্রহণকারী একটি ছবি নিন</string>
+    <string name="id">আইডি</string>
+    <string name="failed_to_register_geolocation_data">ভৌগলিক অবস্থান তথ্য নিবন্ধন করতে ব্যর্থ</string>
+    <string name="verify_Participant">অংশগ্রহণকারী যাচাই করুন</string>
+    <string name="settings_local_server_address">স্থানীয় সার্ভার ঠিকানা (http://192.168.8.200/</string>
+    <string name="laboratory_ID_not_found">ল্যাবরেটরি আইডি পাওয়া যায় নি</string>
+    <string name="member_not_found">অংশগ্রহণকারীর নাম পাওয়া যায় না, অংশগ্রহণকারী নিবন্ধক হতে হবে কিনা তা নির্ধারণ করতে অধ্যয়ন সমন্বয়কারী পড়ুন</string>
+    <string name="choose_a_person">নতুন অংশগ্রহণকারী অবিরত বা রেজিস্টার করার জন্য একটি ব্যক্তি নির্বাচন করুন</string>
+    <string name="please_take_image">স্বাক্ষরিত সম্মতি ফর্ম একটি ছবি গ্রহণ করুন</string>
+    <string name="reason_for_not_measuring_bp">বিপি পরিমাপ না করার কারণ</string>
+    <string name="offline">অফলাইন</string>
+    <string name="user_management">ইউজার ম্যানেজমেন্ট</string>
+    <string name="device_management">যন্ত্র ব্যবস্থাপনা</string>
+
+    <string name="passowrd_reg_error">অবৈধ পাসওয়ার্ড আপনার পাসওয়ার্ডটি অন্তত একটি বড় হাতের অক্ষর, একটি ছোট হাতের অক্ষর, এক নম্বর অঙ্ক এবং এক বিশেষ অক্ষর থাকা উচিত।</string>
+<string name="custom_error_max_max_length">অবৈধ পাসওয়ার্ড আপনার পাসওয়ার্ড 8 এবং 30 অক্ষরের মধ্যে হতে হবে।</string>
+<string name="registraion_contact_relationship_relative">আপেক্ষিক</string>
+<string name="registraion_contact_relationship_friend">বন্ধু</string>
+<string name="registraion_contact_relationship_colleague">সহকর্মী</string>
+<string name="registraion_contact_relationship_neighbour">প্রতিবেশী</string>
+<string name="registraion_contact_relationship_other">অন্যান্য</string>
+<string name="axivity_unable_to_setup">সেটআপ করতে অক্ষম</string>
+<string name="processing_hba1c_total_Cholesterol">মোট কলেস্টেরল সম্পূর্ণ</string>
+<string name="processing_hdl">সম্পূর্ণ এইচডিএল</string>
+<string name="processing_triglycerides">সম্পূর্ণ ট্রাইগ্লিসারাইডস</string>
+<string name="station_completed">স্টেশন সম্পন্ন</string>
+<string name="station_canceled">স্টেশন বাতিল</string>
+<string name="body_measurements_title">শারীরিক পরিমাপ</string>
+<string name="activity_tracker">কার্যকলাপ ট্র্যাকার</string>
+<string name="please_make_sure_you_have_completed_all_the_tasks_below">আপনি নীচের সব কাজ সম্পন্ন করেছেন তা নিশ্চিত করুন:</string>
+<string name="pick_up_one_of_the_device_name_devices">[ডিভাইসের নাম] ডিভাইসগুলির মধ্যে একটি চয়ন করুন</string>
+<string name="i_have_completed_all_the_steps_above">আমি উপরের সব পদক্ষেপ সম্পন্ন করেছেন</string>
+<string name="press_setup">প্রেস সেটআপ</string>
+<string name="plug_in_the_device">ট্যাবলেট অ্যাক্টিভিটি ট্র্যাকার সংযোগ করুন</string>
+<string name="registration_consent_question">অংশগ্রহণকারী সম্মতি প্রদান করে, সম্মতি ফর্ম স্বাক্ষর সম্পূর্ণ এবং স্বাক্ষরিত ফর্ম একটি ছবি নিতে।</string>
+<string name="nid_incorrect">জাতীয় আইডি বিন্যাস ভুল</string>
+<string name="the_barcode_you_scanned_already_has_an_id_assigned_to_it_please_try_another_one">আপনি স্ক্যান কোড ইতিমধ্যে এটি একটি আইডি নির্ধারিত আছে। অন্য একটি চেষ্টা করুন।</string>
+<string name="try_another_barcode">অন্য কোড চেষ্টা করুন</string>
+<string name="comments_notes_optional">মন্তব্য / নোট (ঐচ্ছিক)</string>
+<string name="processing_aina_not_connected">অ্যাপ্লিকেশন ইন্টিগ্রেটেড নয়</string>
+<string name="switch_to_manual">ম্যানুয়াল সুইচ</string>
+<string name="device_id">যন্ত্র</string>
+<string name="lot_id">অনেক আইডি</string>
+<string name="unknown">অপরিচিত যন্ত্র</string>
+<string name="string_triglycerides">ট্রাইগ্লিসেরাইডস</string>
+<string name="processing_hdl_instructions">উপরের সব পরীক্ষা সমাপ্তির পরে, এইচডিএল শেষ করার জন্য নিচের টিপুন</string>
+<string name="processing_cholesterol_instructions">উপরোক্ত পরীক্ষাগুলি শেষ করার পরে, মোট কলেস্টেরল শেষ করার জন্য নিচের টিপুন</string>
+<string name="processing_triglycerides_instructions">উপরের সমস্ত পরীক্ষার সমাপ্তির পরে, ট্রিগ্লিসারাইডস শেষ করতে নিম্নলিখিত টিপুন</string>
+<string name="turbine_id">টারবাইন আইডি</string>
+<string name="dominant_wrist">সর্বাগ্রে কব্জি</string>
+<string name="register_activity_tracker">কার্যকলাপ ট্র্যাকার নিবন্ধন করুন</string>
+
+<string name="screening_blood_pressure">রক্তচাপ</string>
+<string name="blood_pressure_text">আপনি অংশগ্রহণকারীর স্টাডি আইডি কার্ড স্ট্যাম্প নিশ্চিত করুন। তারপর ফিনিস জমা দিতে আলতো চাপুন।</string>
+<string name="skip_fat_and_muscle_section">চর্বি এবং পেশী বিভাগ এড়িয়ে যান</string>
+<string name="muscle">পেশী</string>
+<string name="visceral_fat">ভিসারাল চর্বি</string>
+<string name="error_body_measurement">উচ্চতা, শারীরিক রচনা এবং হিপ এবং কোমর সম্পূর্ণ করুন</string>
+<string name="complete_body_composition">সম্পূর্ণ শারীরিক রচনা</string>
+<string name="complete_hip_and_waist">সম্পূর্ণ হিপ এবং WAIST</string>
+<string name="body_fat">শরীরের চর্বি</string>
+<string name="not_take_yet">এখনো গ্রহণ করা হয় না</string>
+<string name="run_test">রান পরীক্ষা</string>
+<string name="app_repeat_station">এই স্টেশন জন্য পরিমাপ ইতিমধ্যে এই অংশগ্রহণকারী জন্য নেওয়া হয়েছে। আপনি এখনও অবিরত করতে চান?</string>
+
+<string name="registraion_contact_relationship_grandparent">পিতামহ</string>
+<string name="registraion_contact_relationship_parent">মাতা</string>
+<string name="registraion_contact_relationship_spouse">পত্নী (স্বামী / স্ত্রী / অংশীদার)</string>
+<string name="registraion_contact_relationship_sibling">ভাইবোন (ভাই / বোন)</string>
+<string name="registraion_contact_relationship_aunt">মাসিমা বা চাচা</string>
+<string name="registraion_contact_relationship_cousin">চাচাত ভাই</string>
+
+<string name="app_appointment_date">সাক্ষাৎকারের তারিখ</string>
+<string name="spirometry_error">Spirometry পরিমাপ সঞ্চালন করতে স্থানীয় সার্ভারের সাথে সংযোগ করুন</string>
+<string name="mark_as_complete">সম্পূর্ণ হিসাবে চিহ্নিত করুন</string>
+<string name="other_please_specify">অন্যান্য (উল্লেখ করুন:</string>
+<string name="bm_reason_participant_is_unable_to_stand">প্রযুক্তিগত সমস্যা</string>
+<string name="bm_reason_participant_is_in_a_wheel_chair">অংশগ্রহণকারী ফ্যাক্টর (যেমন সঞ্চালন বা প্রত্যাখ্যান করতে অক্ষম)</string>
+<string name="bm_reson_participant_s_hand_is_broken_into_pieces">প্রযুক্তিগত সমস্যা</string>
+<string name="bm_reson_participant_has_no_arms">অংশগ্রহণকারী ফ্যাক্টর (যেমন সঞ্চালন বা প্রত্যাখ্যান করতে অক্ষম)</string>
+
+<string name="activity_device_registration_failed">রেজিস্ট্রেশন ব্যর্থ হয়েছে</string>
+<string name="activity_device_registration_success">নিবন্ধন সফল</string>
+
+<string name="add_household_direct">সরাসরি - ব্যক্তি নিজেরা তাদের তথ্য সরবরাহ করে।</string>
+<string name="add_household_via_contact">যোগাযোগের মাধ্যমে - তাদের পরিবারের সদস্যদের পক্ষ থেকে অন্য কেউ দেওয়া তথ্য</string>
+
+<string name="error_blood_glucose_message">রক্তের গ্লুকোজ বৈধ পরিসীমা নয় - 54-540</string>
+<string name="error_blood_total_cholesterol">মোট কলেস্টেরল বৈধ পরিসীমা নয় - 63-350 মিগ্রা / ডিএল</string>
+<string name="error_blood_hdl_cholesterol">এইচডিএল বৈধ পরিসীমা নয় - 9 -162 মিগ্রা / ডিএল</string>
+<string name="error_blood_triglycerides">Triglycerides বৈধ পরিসীমা না - 18-600 মিলিগ্রাম / ডিএল</string>
+<string name="error_blood_hba1c">HbA1c বৈধ পরিসীমা নয় - 3-20</string>
+<string name="error_blood_hogtt">HOGTT বৈধ পরিসীমা নয় - 54-540</string>
+
+<string name="user_not_found">অবৈধ ব্যবহারকারীর নাম পাসওয়ার্ড সমন্বয়</string>
+    <string name="Was_cataract_observed">"Was cataract observed? (Select one)"</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="both">Both</string>
+    <string name="no">No</string>
+
+    <string name="processing_hemoglobin">লাল শোণিতকণার রঁজক উপাদান</string>
+    <string name="processing_hemoglobin_btn">সম্পূর্ণ হিমোগ্লোবিন</string>
+    <string name="error_hemoglobin">হিমোগ্লোবিন বৈধ পরিসরে নেই - 5 - 30 mg/dL</string>
+    <string name="questionnariy_exit_message">সমীক্ষাটি সম্পূর্ণ হয়েছে হিসাবে চিহ্নিত করার আগে নিশ্চিত করুন finish আপনি কি প্রস্থান করতে চান?</string>
+    <string name="axivity_exist_message">আপনি কি নিশ্চিত যে আপনি বিদ্যমান পঠনগুলি মুছতে চান?</string>
+
+    <!-- Generated by Automatic String Resource Translation
+    --><!--          https://asrt.gluege.boerde.de
+--></resources>

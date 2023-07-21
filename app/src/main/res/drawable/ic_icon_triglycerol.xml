@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:autoMirrored="true"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M15,35.5988C13,39.5988 13.2,43.9988 16.2,44.1988C20.8,44.5988 22.8,42.3988 24.8,38.3988C26.8,34.3988 26.4,31.5988 23.6,29.7988C21.6,28.3988 17.2,31.5988 15,35.5988Z" />
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M49.9989,39.1988C47.9989,34.5988 44.9989,32.1988 41.1989,32.1988C37.9989,31.9988 37.3989,37.3988 39.3989,42.1988C41.3989,46.9988 45.5989,50.5988 48.1989,49.1988C52.3989,46.9988 51.9989,43.7988 49.9989,39.1988Z" />
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M35.8002,13.3998C33.8002,12.3998 31.0002,15.5998 30.0002,18.7998C29.2002,22.1998 30.2002,25.3998 32.6002,25.3998C36.4002,25.1998 37.4002,23.1998 38.4002,19.9998C39.2002,16.5998 38.2002,14.3998 35.8002,13.3998Z" />
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M31.5991,43C30.1991,43 28.9991,45.4 29.1991,47.6C29.3991,49.8 30.7991,51.6 32.1991,51C34.5991,50 34.7991,48.6 34.5991,46.4C34.5991,44.2 33.5991,43.2 31.5991,43Z" />
+</vector>

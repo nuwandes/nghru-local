@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="org.southasia.ghru.ui.usersetting.UserSettingViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.usersetting.UserSettingViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/systolicInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bp_text_width"
+            android:layout_margin="@dimen/margin_32"
+            android:gravity="start|center_vertical"
+            android:textAlignment="viewStart"
+            android:textColorHint="#000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextLocalIp"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:gravity="center_vertical|start"
+                android:hint="@string/settings_local_server_address"
+                android:paddingStart="@dimen/margin_24"
+                android:text="ss"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/default_font_size"
+                android:translationY="3dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/buttonComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_32"
+            android:layout_marginEnd="@dimen/margin_32"
+            android:background="@drawable/ic_button_fill_primary"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingEnd="@dimen/margin_normal"
+            android:text="@string/btn_save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/default_font_size" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_32"
+                android:layout_marginEnd="@dimen/margin_32"
+                android:layout_marginTop="@dimen/margin_24"
+                android:text="@string/current_version" android:fontFamily="@font/roboto" android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/textViewVesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_32"
+            android:layout_marginEnd="@dimen/margin_32"
+            android:text="0.23" android:fontFamily="@font/roboto" android:textSize="18sp"/>
+    </LinearLayout>
+</layout>

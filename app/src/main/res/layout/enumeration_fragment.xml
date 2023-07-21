@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <fragment
+            android:id="@+id/enumeration_nav_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/enumeration" />
+
+
+        <LinearLayout
+            android:id="@+id/bottom_navigation"
+            android:layout_width="0dp"
+            android:layout_height="119dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/card_background_bottom"
+            android:elevation="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_enumeration">
+
+
+            <Button
+                android:id="@+id/buttonHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/botom_drawable_selector"
+                android:drawableTop="@drawable/ic_icon_enumeration"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:orientation="vertical"
+                android:text="@string/enumeration"
+                android:textColor="@color/defult_blue"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/buttonStation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/botom_drawable_selector"
+                android:drawableTop="@drawable/ic_icon_stations"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:orientation="vertical"
+                android:text="@string/string_station"
+                android:textColor="@color/defult_blue"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonDevice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/botom_drawable_selector"
+                android:drawableTop="@drawable/ic_icon_devices"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:orientation="vertical"
+                android:text="@string/string_devices"
+                android:textColor="@color/defult_blue"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonMore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/botom_drawable_selector"
+                android:drawableTop="@drawable/ic_icon_more"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:orientation="vertical"
+                android:text="@string/string_more"
+                android:textColor="@color/defult_blue"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

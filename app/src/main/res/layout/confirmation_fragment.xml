@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="screeningId"
+            type="String" />
+        <variable
+            name="participantMeta"
+            type="org.southasia.ghru.vo.request.ParticipantMeta" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="false"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        app:navGraph="@navigation/body_measurements"
+        tools:context="org.southasia.ghru.BodyMeasurementsActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/registration_registration_confirmation_checklist"
+                app:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@drawable/divider"
+            android:dividerPadding="@dimen/one_dp"
+            android:drawableEnd="@drawable/ic_seperator"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:showDividers="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/registered_geo_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:background="@drawable/ic_img_geo_loc_background"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:layout_marginEnd="19dp"
+                            android:layout_marginBottom="@dimen/margin_20"
+                            android:contentDescription="@string/imageview"
+                            app:srcCompat="@drawable/ic_circular_tick" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/registration_participant_id_assigned_successful"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_32"
+                        android:background="#E6F6FF"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/margin_20"
+                        android:text="@{screeningId}"
+                        android:textAlignment="center"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_vertical"
+                        android:text="@string/registration_completion_tasks"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/separator4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:drawableStart="@drawable/icon_checklist_one"
+                        android:drawablePadding="@dimen/margin_32"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_completion_instructions_1"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:drawableStart="@drawable/icon_checklist_two"
+                        android:drawablePadding="@dimen/margin_32"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_completion_instructions_2"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:drawableStart="@drawable/icon_checklist_three"
+                        android:drawablePadding="@dimen/margin_32"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_completion_instructions_3"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/ic_seperator" />
+
+
+                    <TextView
+                        android:id="@+id/explore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="52dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center_vertical"
+                        android:text="@string/registration_completion_instructions_confirm"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="@dimen/margin_24"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:background="@drawable/ic_comment_background"
+                        android:gravity="top|start"
+                        android:hint="@string/comments_notes_optional"
+                        android:inputType="textCapWords|textCapSentences|textPersonName"
+                        android:padding="24dp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/enum_hint_color"
+                        android:textSize="@dimen/default_font_size"
+                        android:text="@{ participantMeta.body.comment }"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:layout_marginBottom="@dimen/margin_24"
+                        android:orientation="vertical">
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            style="?android:attr/progressBarStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:layout_marginEnd="@dimen/margin_32"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/textViewError"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/eight_dp"
+                            android:layout_marginTop="@dimen/margin_normal"
+                            android:layout_marginEnd="@dimen/eight_dp"
+                            android:layout_marginBottom="@dimen/eight_dp"
+                            android:textColor="@color/red"
+                            android:textSize="18sp"
+                            android:visibility="gone"
+                            tools:text="sss" />
+
+                        <Button
+                            android:id="@+id/confirmButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_button_fill_primary"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/twenty_one_dp"
+                            android:text="@string/app_button_confirm"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/default_font_size" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

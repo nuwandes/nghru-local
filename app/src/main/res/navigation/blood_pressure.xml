@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/measurements"
+    app:startDestination="@id/scanBarcodeFragment">
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.scanbarcodebp.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_measurementsFragment"
+            app:clearTask="true"
+            app:destination="@id/pPManualOneFragment"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_manualScanFragment"
+            app:destination="@id/manualScanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualScanFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.manualentrybp.ManualEntryBodyMeasurement"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/manual_entry_body_measurement_fragment">
+        <action
+            android:id="@+id/action_manualScanFragment_to_measurementsFragment"
+            app:clearTask="true"
+            app:destination="@id/pPManualOneFragment"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/verifyIDFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.verifyid.VerifyIDFragment"
+        android:label="VerifyIDFragment"
+        tools:layout="@layout/verify_id_fragment">
+        <action
+            android:id="@+id/action_verifyIDFragment_to_measurementsFragment"
+            app:destination="@id/measurementsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/measurementsFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.measurements.MeasurementsFragment"
+        android:label="MeasurementsFragment"
+        tools:layout="@layout/measurements_fragment">
+
+        <action
+            android:id="@+id/action_measurementsSecondFragment_to_bPMainFragment"
+            app:destination="@id/bPMainFragment" />
+        <action
+            android:id="@+id/action_measurementsSecondFragment_to_pPManualOneFragment"
+            app:destination="@id/pPManualOneFragment" />
+        <action
+            android:id="@+id/action_measurementsSecondFragment_to_bPManualTwoFragment"
+            app:destination="@id/bPManualTwoFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/measurementsSecondFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.measurements.second.MeasurementsSecondFragment"
+        android:label="MeasurementsSecondFragment"
+        tools:layout="@layout/measurements_second_fragment">
+
+        <action
+            android:id="@+id/action_measurementsSecondFragment_to_bPMainFragment"
+            app:destination="@id/bPMainFragment" />
+        <action
+            android:id="@+id/action_measurementsSecondFragment_to_pPManualOneFragment"
+            app:destination="@id/pPManualOneFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bPFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.bp.BPFragment"
+        android:label="BPFragment"
+        tools:layout="@layout/bp_fragment">
+        <action
+            android:id="@+id/action_bPFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.review.ReviewFragment"
+        android:label="ReviewFragment"
+        tools:layout="@layout/review_body_measurment_fragment"></fragment>
+
+
+    <fragment
+        android:id="@+id/bPMainFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.bp.main.BPMainFragment"
+        android:label="BPMainFragment"
+        tools:layout="@layout/b_p_main_fragment">
+        <action
+            android:id="@+id/action_bPMainFragment_to_pPManualOneFragment"
+            app:destination="@id/pPManualOneFragment" />
+        <action
+            android:id="@+id/action_bPMainFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pPManualOneFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.bp.manual.one.BPManualOneFragment"
+        android:label="BPManualOneFragment"
+        tools:layout="@layout/b_p_manual_one_fragment">
+        <action
+            android:id="@+id/action_pPManualOneFragment_to_bPManualTwoFragment"
+            app:destination="@id/bPManualTwoFragment" />
+        <action
+            android:id="@+id/action_bPFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bPManualTwoFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.bp.manual.two.BPManualTwoFragment"
+        android:label="BPManualTwoFragment"
+        tools:layout="@layout/b_p_manual_two_fragment">
+        <action
+            android:id="@+id/action_bPManualTwoFragment_to_bPManualThreeFragment"
+            app:destination="@id/bPManualThreeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bPManualThreeFragment"
+        android:name="org.southasia.ghru.ui.bodymeasurements.bp.manual.three.BPManualThreeFragment"
+        android:label="BPManualThreeFragment"
+        tools:layout="@layout/b_p_manual_three_fragment">
+        <action
+            android:id="@+id/action_bPManualThreeFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_reviewFragment2"
+        app:destination="@id/reviewFragment" />
+
+
+</navigation>

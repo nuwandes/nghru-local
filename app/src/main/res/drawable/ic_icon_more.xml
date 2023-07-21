@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/icon_size"
+    android:height="@dimen/icon_size"
+    android:autoMirrored="true"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M35.85,14.25L12,14.25C11.1,14.25 10.5,13.65 10.5,12.75C10.5,11.85 11.1,11.25 12,11.25L35.85,11.25C36.75,11.25 37.35,11.85 37.35,12.75C37.35,13.65 36.75,14.25 35.85,14.25Z" />
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M35.85,25.5L12,25.5C11.1,25.5 10.5,24.9 10.5,24C10.5,23.1 11.1,22.5 12,22.5L35.85,22.5C36.75,22.5 37.35,23.1 37.35,24C37.35,24.9 36.75,25.5 35.85,25.5Z" />
+    <path
+        android:fillColor="@color/defult_blue"
+        android:pathData="M35.85,36.75L12,36.75C11.1,36.75 10.5,36.15 10.5,35.25C10.5,34.35 11.1,33.75 12,33.75L35.85,33.75C36.75,33.75 37.35,34.35 37.35,35.25C37.35,36.15 36.75,36.75 35.85,36.75Z" />
+</vector>

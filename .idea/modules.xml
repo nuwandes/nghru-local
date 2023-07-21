@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="nghrudev-nghru-android-1eebb017f336/app" />
+      <module fileurl="file://$PROJECT_DIR$/blenativewrapper/blenativewrapper.iml" filepath="$PROJECT_DIR$/blenativewrapper/blenativewrapper.iml" group="nghrudev-nghru-android-1eebb017f336/blenativewrapper" />
+      <module fileurl="file://$PROJECT_DIR$/nghrudev-nghru-android-1eebb017f336.iml" filepath="$PROJECT_DIR$/nghrudev-nghru-android-1eebb017f336.iml" group="nghrudev-nghru-android-1eebb017f336" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerPatient"
+    app:startDestination="@+id/checkListFragment">
+
+    <fragment
+        android:id="@+id/checkListFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.checklist.CheckListFragment"
+        android:label="CheckListFragment"
+        tools:layout="@layout/check_list_fragment">
+
+        <action
+            android:id="@+id/action_checkListFragment_to_scanQRCodeFragment"
+            app:destination="@id/scanQRCodeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/scanQRCodeFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.scanqrcode.ScanQRCodeFragment"
+        android:label="scanQRCodeFragment"
+        tools:layout="@layout/scan_qr_code_fragment">
+
+        <action
+            android:id="@+id/action_scanCodeFragment_to_explanationFragment"
+            app:clearTask="true"
+            app:destination="@id/explanationFragment" />
+        <action
+            android:id="@+id/action_scanCodeFragment_to_scanQRcodeManualFragment"
+             app:destination="@id/scanQRcodeManualFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanQRcodeManualFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.scanqrcode.manualentry.ManualEntryQRCodeFragment"
+        android:label="ManualEntryQRCodeFragment"
+        tools:layout="@layout/register_patient_qrcode_manualentry_fragment">
+        <action
+            android:id="@+id/action_scanCodeFragment_to_explanationFragment"
+            app:clearTask="true"
+            app:destination="@id/explanationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/patientPhotoFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.identification.patientphoto.PatientPhotoFragment"
+        android:label="patientPhotoFragment"
+        tools:layout="@layout/patient_photo_fragment">
+
+        <action
+            android:id="@+id/action_patientPhotoFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/bar_code_scan_fragment">
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_confirmationFragment"
+            app:clearTask="true"
+            app:destination="@id/confirmationFragment" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_scanBarcodeManualFragment"
+            app:clearTask="true"
+            app:destination="@id/scanBarcodeManualFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanBarcodeManualFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.scanbarcode.manualentry.ManualEntryBarcodeFragment"
+        android:label="ManualEntryBarcodeFragment"
+        tools:layout="@layout/bar_code_scan_fragment">
+        <action
+            android:id="@+id/action_scanBarcodeManualFragment_to_confirmationFragment"
+            app:clearTask="true"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.confirmation.ConfirmationFragment"
+        android:label="ConfirmationFragment"
+        tools:layout="@layout/confirmation_fragment"></fragment>
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="org.southasia.ghru.ui.camera.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/camera_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/explanationFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.explanation.ExplanationFragment"
+        android:label="ExplanationFragment"
+        tools:layout="@layout/explanation_fragment">
+        <action
+            android:id="@+id/action_explanationFragment_to_BasicDetailsFragment"
+            app:destination="@id/BasicDetailsFragment" />
+        <argument
+            android:name="member"
+            android:defaultValue="null" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/BasicDetailsFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.basicdetails.BasicDetailsFragment"
+        android:label="BasicDetailsFragment"
+        tools:layout="@layout/basic_details_fragment">
+        <argument
+            android:name="member"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_BasicDetailsFragment_to_IdentificationFragment"
+            app:destination="@id/IdentificationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.review.ReviewFragment"
+        android:label="ReviewFragment"
+        tools:layout="@layout/review_patient_fragment">
+        <argument
+            android:name="member"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_reviewFragment_to_scanBarcodeFragment"
+            app:destination="@id/scanBarcodeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/IdentificationFragment"
+        android:name="org.southasia.ghru.ui.registerpatient.identification.IdentificationFragment"
+        android:label="IdentificationFragment"
+        tools:layout="@layout/identification_fragment">
+        <argument
+            android:name="member"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_IdentificationFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+        <action
+            android:id="@+id/action_IdentificationFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_IdentificationFragment_to_patientPhotoFragment"
+            app:destination="@id/patientPhotoFragment" />
+    </fragment>
+
+
+    <action
+        android:id="@+id/action_global_explanationFragment"
+        app:destination="@id/explanationFragment" app:clearTask="true"/>
+    <action
+        android:id="@+id/action_global_BasicDetailsFragment"
+        app:destination="@id/BasicDetailsFragment" />
+    <action
+        android:id="@+id/action_global_IdentificationFragment"
+        app:destination="@id/IdentificationFragment" />
+    <action
+        android:id="@+id/action_global_reviewFragment"
+        app:destination="@id/reviewFragment"
+
+         />
+    <action
+        android:id="@+id/action_global_scanBarcodeFragment"
+        app:destination="@id/scanBarcodeFragment" />
+    <action
+        android:id="@+id/action_global_confirmationFragment"
+        app:destination="@id/confirmationFragment" />
+
+    <action
+        android:id="@+id/action_global_cameraFragment"
+        app:destination="@id/cameraFragment" />
+
+</navigation>

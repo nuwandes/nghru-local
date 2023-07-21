@@ -1,0 +1,382 @@
+apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'io.fabric'
+
+android {
+
+    def versionPropsFile = file('version.properties')
+    def versionBuild
+
+    /*Setting default value for versionBuild which is the last incremented value stored in the file */
+    if (versionPropsFile.canRead()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        versionBuild = versionProps['VERSION_BUILD'].toInteger()
+    } else {
+        throw new FileNotFoundException("Could not read version.properties!")
+    }
+
+
+    /*Wrapping inside a method avoids auto incrementing on every gradle task run. Now it runs only when we build apk*/
+    ext.autoIncrementBuildNumber = {
+
+        if (versionPropsFile.canRead()) {
+            def Properties versionProps = new Properties()
+            versionProps.load(new FileInputStream(versionPropsFile))
+            versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+            versionProps['VERSION_BUILD'] = versionBuild.toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+        } else {
+            throw new FileNotFoundException("Could not read version.properties!")
+        }
+    }
+    signingConfigs {
+        releaseCongig {
+            try {
+                keyAlias 'nhealth'
+                keyPassword '1qaz2wsx'
+                storeFile file('newNHealth1.jks')
+                storePassword 'Nhealth1234Store'
+            }
+            catch (ex) {
+                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            }
+        }
+        config {
+        }
+    }
+
+//    signingConfigs {
+//        releaseCongig {
+//            try {
+//                keyAlias 'nhealth'
+//                keyPassword 'nghru1234'
+//                storeFile file('nHealth.keystore')
+//                storePassword 'nghru1234'
+//            }
+//            catch (ex) {
+//                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+//            }
+//        }
+//        config {
+//        }
+//    }
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+    defaultConfig {
+        applicationId "org.southasia.ghru"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode versionBuild
+        versionName "1.1." + versionBuild
+        testInstrumentationRunner "org.southasia.ghru.util.GithubTestRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+    }
+
+
+    buildTypes {
+        //http://192.168.8.200/
+        //https://health-activity.com/
+        //http://devsite.nghru.org/
+        //https://solid-space-200111.appspot.com/household/barcodes
+
+        // fred 1i30WHtSxPbcH6pjFOINqp8UbSWOgDRpyoj7PkkA
+        //dev phOJqrz6a4RlzlmC2TYtMnuPfOLwZRHirHYXlTaS
+        // local pointed url should use for release build -----------------------
+        def serverUrl =  '\"' + (System.getenv("SERVER_URL")?: "http:/192.168.8.200/")+'\"'
+        //-----------------------------------------------------------------------
+        //def serverUrl =  '\"' + (System.getenv("SERVER_URL")?: "https://inn.nghru.org/")+'\"'
+        //def serverUrl = '\"' + (System.getenv("SERVER_URL") ?: "https://nhealth-staging.appspot.com") + '\"'
+        // def serverUrl =  '\"' + (System.getenv("SERVER_URL")?: "https://devsite.nghru.org/")+'\"'
+        // def serverUrl = '\"' + (System.getenv("SERVER_URL") ?: "https://nhealth-staging.appspot.com") + '\"'
+
+        // pointed for cloud server ---------------------
+        //def serverUrl = '\"' + (System.getenv("SERVER_URL") ?: "https://nhealth-staging-sg-276511.df.r.appspot.com") + '\"'
+//        -----------------------------------------------
+
+        def clientSecret = "\"phOJqrz6a4RlzlmC2TYtMnuPfOLwZRHirHYXlTaS\""
+
+        debug {
+            testCoverageEnabled !project.hasProperty('android.injected.invoked.from.ide')
+            buildConfigField "String", "SERVER_URL", serverUrl
+            buildConfigField "String", "client_secret", clientSecret
+            buildConfigField "String", "client_id", "\"2\""
+            resValue("string", "PORT_NUMBER", "8080")
+            signingConfig signingConfigs.releaseCongig
+        }
+
+        devsite {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.releaseCongig
+            zipAlignEnabled true
+            shrinkResources true
+            buildConfigField "String", "SERVER_URL", "\"https://devsite.nghru.org/\""
+            buildConfigField "String", "client_secret", clientSecret
+            buildConfigField "String", "client_id", "\"2\""
+        }
+
+        staging {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.releaseCongig
+            zipAlignEnabled true
+            shrinkResources true
+            buildConfigField "String", "SERVER_URL", "\"https://nhealth-staging.appspot.com/\""
+            buildConfigField "String", "client_secret", clientSecret
+            buildConfigField "String", "client_id", "\"2\""
+        }
+
+        local {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.releaseCongig
+            zipAlignEnabled true
+            shrinkResources true
+            buildConfigField "String", "SERVER_URL", "\"http://192.168.8.200/\""
+            buildConfigField "String", "client_secret", clientSecret
+            buildConfigField "String", "client_id", "\"2\""
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.releaseCongig
+            zipAlignEnabled true
+            shrinkResources true
+            buildConfigField "String", "SERVER_URL", serverUrl
+            buildConfigField "String", "client_secret", clientSecret
+            buildConfigField "String", "client_id", "\"2\""
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        lintConfig rootProject.file('lint.xml')
+    }
+    kapt {
+        javacOptions {
+            // Increase the max count of errors from annotation processors.
+            // Default is 100.
+            option("-Xmaxerrs", 500)
+        }
+    }
+
+    gradle.taskGraph.whenReady { taskGraph ->
+        if (taskGraph.hasTask(assembleDebug)) {  /* when run debug task */
+            autoIncrementBuildNumber()
+        } else if (taskGraph.hasTask(assembleRelease)) { /* when run release task */
+            autoIncrementBuildNumber()
+        }
+    }
+}
+
+jacoco {
+    toolVersion = "0.7.4+"
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.nuvoair.sdk.launcher:sdk-launcher-release:@aar'
+    implementation deps.support.app_compat
+    implementation deps.support.recyclerview
+    implementation deps.support.cardview
+    implementation deps.support.design
+    implementation deps.room.runtime
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    implementation deps.lifecycle.java8
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.glide.runtime
+
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    implementation deps.constraint_layout
+    implementation deps.kotlin.stdlib
+
+    implementation deps.timber
+
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui_ktx
+    implementation deps.navigation.runtime
+    implementation deps.navigation.fragment
+
+    implementation deps.kotlin.reflect
+
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+    kapt deps.dagger.android_support_compiler
+    kapt deps.dagger.compiler
+    kapt deps.room.compiler
+    kapt deps.lifecycle.compiler
+    testImplementation deps.junit
+    testImplementation deps.mock_web_server
+    testImplementation(deps.arch_core.testing, {
+        exclude group: 'com.android.support', module: 'support-compat'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-core-utils'
+    })
+    testImplementation deps.mockito.core
+    androidTestImplementation deps.support.app_compat
+    androidTestImplementation deps.support.recyclerview
+    androidTestImplementation deps.support.cardview
+    androidTestImplementation deps.support.design
+    androidTestImplementation(deps.espresso.core, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    })
+    androidTestImplementation(deps.espresso.contrib, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    })
+    androidTestImplementation(deps.arch_core.testing, {
+    })
+    androidTestImplementation deps.dexmaker
+    androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    implementation 'com.balysv.materialmenu:material-menu:2.0.0'
+    implementation 'com.github.Ilhasoft:data-binding-validator:2.0.0'
+    implementation 'com.squareup:otto:1.3.8'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    implementation 'me.riddhimanadib.form-master:form-master:1.1.0'
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0@aar'
+    implementation 'androidx.core:core-ktx:1.0.1'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    // RxRelay
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.1.0'
+    // RxLint
+    implementation 'nl.littlerobots.rxlint:rxlint:1.6.1'
+    // Priority Job Queue
+    implementation 'com.birbit:android-priority-jobqueue:2.0.1'
+    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation project(':blenativewrapper')
+    implementation 'io.fotoapparat:facedetector:1.0.0'
+    implementation 'io.fotoapparat:fotoapparat:2.6.1'
+    // implementation 'io.fotoapparat.fotoapparat:library:2.3.1'
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:2.1.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.10"
+    implementation 'us.belka:androidtoggleswitch:1.2.2'
+    implementation 'com.pixplicity.easyprefs:library:1.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:0.27.0-eap13'
+    implementation "com.commonsware.cwac:saferoom:0.4.4"
+    implementation 'pub.devrel:easypermissions:1.3.0'
+
+    implementation 'com.github.MFlisar.Lumberjack:lumberjack-library:2.0.4'
+    // modules (OPTIONAL)
+    implementation 'com.github.MFlisar.Lumberjack:lumberjack-filelogger:2.0.4'
+    implementation 'com.github.MFlisar.Lumberjack:lumberjack-notification:2.0.4'
+    debugImplementation 'com.github.MFlisar.Lumberjack:lumberjack-overlay:2.0.4'
+    releaseImplementation 'com.github.MFlisar.Lumberjack:lumberjack-overlay-noop:2.0.4'
+    implementation 'com.github.pinball83:masked-edittext:1.0.4'
+    implementation 'com.budiyev.android:code-scanner:2.0.0'
+    implementation group: 'androidx.viewpager', name: 'viewpager', version: '1.0.0'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.5'
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+
+}
+
+afterEvaluate {
+    tasks.matching {
+        it.name.startsWith('dex')
+    }.each { dx ->
+        if (dx.additionalParameters == null) {
+            dx.additionalParameters = []
+        }
+        dx.additionalParameters += '--multi-dex'
+        dx.additionalParameters += "--main-dex-list=$projectDir/multidex.keep".toString()
+    }
+
+}
+
+// ./gradlew signingReport
+
+task fullCoverageReport(type: JacocoReport) {
+    dependsOn 'createDebugCoverageReport'
+    dependsOn 'testDebugUnitTest'
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*',
+                      '**/*Test*.*', 'android/**/*.*',
+                      '**/*_MembersInjector.class',
+                      '**/Dagger*Component.class',
+                      '**/Dagger*Component$Builder.class',
+                      '**/*_*Factory.class',
+                      '**/*ComponentImpl.class',
+                      '**/*SubComponentBuilder.class']
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = fileTree(dir: "$buildDir", includes: [
+            "jacoco/testDebugUnitTest.exec",
+            "outputs/code-coverage/connected/*coverage.ec"
+    ])
+}
+
+// we need all open to run tests which  a we enable only for debug builds.
+project.tasks.whenTaskAdded {
+    if (it.name == "testReleaseUnitTest") {
+        it.enabled = false
+    }
+}
+repositories {
+    mavenCentral()
+
+
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+// adb shell setprop debug.firebase.analytics.app org.southasia.ghru
+crashlytics {
+    androidNdkOut 'src/main/obj'
+    androidNdkLibsOut 'src/main/libs'
+}
+apply plugin: 'com.google.gms.google-services'

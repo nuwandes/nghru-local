@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <import type="org.southasia.ghru.ui.registerpatient.scanqrcode.membersdialog.MembersDialogViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.registerpatient.scanqrcode.membersdialog.MembersDialogViewModel" />
+
+        <import type="android.text.Html" />
+
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.Text.Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="@string/registration_select_household_member"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/default_font_size" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/members_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_24"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:focusableInTouchMode="true"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/member_dialog_item" />
+
+                <TextView
+                    android:id="@+id/textViewNoMemberFound"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="10dp"
+                    android:text="@string/enumeration_no_member"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/default_font_size"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/gray_separator"></LinearLayout>
+
+                <TextView
+                    android:id="@+id/buttonNewPaticipant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableTint="#000000"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_margin="@dimen/margin_24"
+                    android:text="@string/registration_participant_not_found"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/margin_24"
+                    android:textAlignment="center"/>
+=
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</layout>

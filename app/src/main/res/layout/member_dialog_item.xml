@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="member"
+            type="org.southasia.ghru.vo.request.Member" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/imageViewIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_icon_user_circle"
+            android:drawablePadding="@dimen/margin_normal"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="start|center_vertical"
+            android:paddingTop="@dimen/margin_normal"
+            android:paddingBottom="@dimen/margin_normal"
+            android:text="@{@string/member_full_name(member.name,member.familyName)}"
+            android:textColor="@color/defult_blue"
+            android:textSize="@dimen/default_font_size"
+            tools:text="Aklima Khatun" />
+
+
+    </LinearLayout>
+
+
+</layout>

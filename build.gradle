@@ -1,0 +1,59 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.10'
+    ext.zxing         = '3.6.0-alpha04'
+    ext.barcodescanner =  "1.9.8"
+    apply from: 'versions.gradle'
+    addRepos(repositories)
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath deps.kotlin.plugin
+        classpath deps.kotlin.allopen
+        classpath 'com.google.gms:google-services:4.0.1'
+        classpath deps.navigation.safe_args_plugin
+        classpath 'io.fabric.tools:gradle:1.30.0'
+
+    }
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.41'
+}
+allprojects {
+    addRepos(repositories)
+
+}
+
+subprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << '-Xmaxerrs' << '500'
+        }
+    }
+}
+
+
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

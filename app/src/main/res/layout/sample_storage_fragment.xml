@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sample"
+            type="org.southasia.ghru.vo.request.SampleRequest" />
+
+        <import type="org.southasia.ghru.ui.samplemanagement.storage.StorageViewModel" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.samplemanagement.storage.StorageViewModel" />
+
+        <variable
+            name="storageID"
+            type="String" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:context="org.southasia.ghru.SettingActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/sample_management_processing"
+                app:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:focusableInTouchMode="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lb_sample"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_24"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_marginBottom="27dp"
+                        android:text="@string/sample_id"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/ib_sample_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_marginBottom="27dp"
+                        android:text="@{sample.sampleId}"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="@dimen/one_dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:background="@color/separator_gray" />
+
+                    <TextView
+                        android:id="@+id/lb_collected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_24"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_marginBottom="27dp"
+                        android:text="@string/processing_collected"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/lb_collected_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_marginBottom="27dp"
+                        android:text="@{sample.createdAt}"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:background="@color/separator_gray" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/textView_margin"
+                    android:drawableStart="@drawable/qr_code_icon"
+                    android:drawablePadding="@dimen/margin_32"
+                    android:gravity="center_vertical|start"
+                    android:text="@string/processing_link_laboratory_label"
+                    android:textSize="20sp" />
+
+
+                <Button
+                    android:id="@+id/buttonScan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="@drawable/ic_button_revisited_household"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/processing_scan_the_qr_code"
+                    android:textColor="@color/defult_blue"
+                    android:textSize="@dimen/default_font_size" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutLinkedStorageID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="460dp"
+                        android:layout_height="wrap_content"
+                        android:background="#98C34E"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="59dp"
+                            android:background="@drawable/ic_circular_tick_white"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_20"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center"
+                            android:text="@string/processing_link_complete"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewStorageID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/roboto"
+                            android:gravity="center"
+                            android:text="@{storageID}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/buttonResetId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="#88AF44"
+                        android:drawableStart="@drawable/icon_reset_white"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:paddingStart="@dimen/margin_20"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="@dimen/margin_20"
+                        android:paddingBottom="10dp"
+                        android:text="@string/processing_redo_link"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/checkLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_60"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="#E6F6FF"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="63dp"
+                        android:layout_marginStart="@dimen/margin_24"
+                        android:paddingStart="@dimen/margin_20"
+                        android:paddingLeft="@dimen/margin_20"
+                        android:text="@string/processing_relabel_confirmation"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <Button
+                    android:id="@+id/buttonComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_32"
+                    android:background="@drawable/ic_button_fill_primary"
+                    android:drawableEnd="@drawable/ic_arrow_back"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:text="@string/app_button_proceed"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_font_size" />
+
+                <Button
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_60"
+                    android:layout_marginLeft="@dimen/margin_32"
+                    android:layout_marginRight="@dimen/margin_32"
+                    android:background="@drawable/ic_button_frame"
+                    android:drawableEnd="@drawable/ic_arrow_back"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:text="@string/cancel"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/default_font_size" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </ScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

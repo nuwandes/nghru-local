@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="member"
+            type="org.southasia.ghru.vo.request.ParticipantMeta" />
+
+        <import type="org.southasia.ghru.vo.request.Gender" />
+
+        <import type="org.southasia.ghru.ui.registerpatient_new.review.ReviewViewModelNew" />
+
+        <variable
+            name="viewModel"
+            type="org.southasia.ghru.ui.registerpatient_new.review.ReviewViewModelNew" />
+
+
+        <variable
+            name="resource"
+            type="org.southasia.ghru.vo.Resource" />
+
+        <variable
+            name="retryCallback"
+            type="org.southasia.ghru.ui.common.RetryCallback" />
+
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="false"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        app:navGraph="@navigation/body_measurements"
+        tools:context="org.southasia.ghru.BodyMeasurementsActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/registration_register_a_participant"
+                app:titleTextColor="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="93dp"
+                android:background="?colorPrimary"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/textView8"
+                        android:layout_width="@dimen/margin_32"
+                        android:layout_height="@dimen/margin_32"
+                        android:layout_marginStart="59dp"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:background="@drawable/ic_circular_tick_green"
+                        android:contentDescription="@string/textview8"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="@string/explanation"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                    <LinearLayout
+                        android:id="@+id/divider2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView8"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="59dp">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="@dimen/margin_32"
+                        android:layout_height="@dimen/margin_32"
+                        android:layout_marginStart="59dp"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:background="@drawable/ic_circular_tick_green"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="@string/registration_basic_details"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="109dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                    <LinearLayout
+                        android:id="@+id/divider3"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView13"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toStartOf="@+id/textView13"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:visibility="gone"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="@dimen/margin_32"
+                        android:layout_height="@dimen/margin_32"
+                        android:layout_marginStart="59dp"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:background="@drawable/ic_circular_tick_green"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="@string/registration_identification"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView14"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toStartOf="@+id/textView14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="@dimen/margin_32"
+                        android:layout_height="@dimen/margin_32"
+                        android:layout_marginStart="59dp"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:background="@drawable/ic_ellipse_green"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="left"
+                        android:text="@string/review"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="49dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_normal"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView16"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/top_line_color"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toStartOf="@+id/textView16"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="@drawable/ic_input_field_text"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/enum_hint_color"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/transparent"
+                        android:drawableEnd="@drawable/ic_icon_edit_patient"
+                        android:enabled="false"
+                        android:gravity="center_vertical|start"
+                        android:hint="@string/full_name"
+                        android:singleLine="true"
+                        android:text="@{member.body.firstName +' ' + member.body.lastName}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/default_font_size"
+                        android:translationY="3dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutDob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutBirthDate"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_32"
+                        android:layout_marginEnd="@dimen/margin_32"
+                        android:background="@drawable/ic_input_field_text"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/margin_normal"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="@dimen/margin_normal"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/enum_hint_color"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/birthDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/transparent"
+                            android:cursorVisible="false"
+                            android:drawableEnd="@drawable/ic_icon_edit_patient"
+                            android:editable="false"
+                            android:enabled="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center_vertical|start"
+                            android:hint="@string/app_dob"
+                            android:text="@={viewModel.birthDate}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/enum_hint_color"
+                            android:textSize="@dimen/default_font_size"
+                            android:translationY="3dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto"
+                        android:text="@{viewModel.age}"
+                        android:textColor="#DE000000"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/eight_dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/years"
+                        android:textColor="#8F000000"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonMale"
+                        android:layout_width="0dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="fill"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_weight="1"
+                        android:background="@{viewModel.gender.equalsIgnoreCase(Gender.MALE.name)? @drawable/radio_button_selected_bg : @drawable/radio_button_bg}"
+                        android:drawableTop="@drawable/ic_icon_male"
+                        android:elevation="2dp"
+                        android:onClick="@{()->viewModel.setGender(Gender.MALE)}"
+                        android:paddingTop="15dp"
+                        android:text="@string/app_gender_male"
+                        android:textAllCaps="false"
+                        android:textColor="@{viewModel.gender.equals(Gender.MALE.name)? @color/colorPrimary : @color/dark_gray}"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/buttonFemale"
+                        android:layout_width="0dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="fill"
+                        android:layout_marginEnd="@dimen/margin_normal"
+                        android:layout_weight="1"
+                        android:background="@{viewModel.gender.equalsIgnoreCase(Gender.FEMALE.name)? @drawable/radio_button_selected_bg : @drawable/radio_button_bg}"
+                        android:drawableTop="@drawable/ic_icon_female"
+                        android:elevation="2dp"
+                        android:onClick="@{()->viewModel.setGender(Gender.FEMALE)}"
+                        android:paddingTop="15dp"
+                        android:text="@string/app_gender_female"
+                        android:textAllCaps="false"
+                        android:textColor="@{viewModel.gender.equals(Gender.FEMALE.name)? @color/colorPrimary : @color/dark_gray}"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/buttonGenderOther"
+                        android:layout_width="0dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="fill"
+                        android:layout_weight="1"
+                        android:background="@{viewModel.gender.equalsIgnoreCase(Gender.OTHER.name)? @drawable/radio_button_selected_bg : @drawable/radio_button_bg}"
+                        android:drawableTop="@drawable/ic_gender_other"
+                        android:elevation="2dp"
+                        android:onClick="@{()->viewModel.setGender(Gender.OTHER)}"
+                        android:paddingTop="15dp"
+                        android:text="@string/app_gender_other"
+                        android:textAllCaps="false"
+                        android:textColor="@{viewModel.gender.equals(Gender.OTHER.name)? @color/colorPrimary : @color/dark_gray}"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/margin_32"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="@dimen/margin_normal"-->
+<!--                        android:paddingTop="18dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactNumberPrimaryCodeEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:text="@={member.phoneCountryCode}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:id="@+id/contactNumberPrimaryTextLayout"-->
+<!--                        android:layout_width="435dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:layout_marginEnd="@dimen/margin_32"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:paddingTop="14dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactNumberPrimaryEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:hint="@string/app_primary_contact_number"-->
+<!--                            android:inputType="number"-->
+<!--                            android:maxLength="9"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@={member.body.contactDetails.phoneNumberPreferred}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/enum_hint_color"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/margin_32"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="@dimen/margin_normal"-->
+<!--                        android:paddingTop="18dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactNumberSecondryCodeEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:text="@={member.phoneCountryCode}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:id="@+id/contactNumberSecondryTextLayout"-->
+<!--                        android:layout_width="435dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:layout_marginEnd="@dimen/margin_32"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:paddingTop="14dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactNumberSecondryEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:hint="@string/app_secondary_contact_number"-->
+<!--                            android:inputType="number"-->
+<!--                            android:maxLength="9"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@={member.body.contactDetails.phoneNumberAlternate}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/enum_hint_color"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/emailTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/emailEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/registration_e_mail_address"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.contactDetails.email}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:layout_marginBottom="30dp"-->
+<!--                    android:background="@drawable/gray_separator"-->
+<!--                    android:visibility="gone"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:layout_marginEnd="30dp"-->
+<!--                    android:fontFamily="@font/roboto_bold"-->
+<!--                    android:text="@string/registration_household_details"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/sub_title_size"-->
+<!--                    android:visibility="gone"/>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/addressTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/addressEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/address"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.address.street}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/areaTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/areaEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/area_village_district"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.address.locality}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/postcodeTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/postcodeEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/enumeration_field_postcode"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.address.postcode}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:layout_marginBottom="30dp"-->
+<!--                    android:background="@drawable/gray_separator"-->
+<!--                    android:visibility="gone"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:fontFamily="@font/roboto_bold"-->
+<!--                    android:text="@string/registrationdetails_of_someone_close"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/sub_title_size"-->
+<!--                    android:visibility="gone"/>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/contactPersonNameTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/contactPersonNameEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/contact_name"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.alternateContactsDetails.name}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/contactRelationshipTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/roboto"-->
+<!--                        android:text="@string/registration_contact_relationship"-->
+<!--                        android:textSize="15sp" />-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/registration_contact_relationship"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.alternateContactsDetails.relationship}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/contactAddressTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/contactAddressEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/registration_contact_address"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.alternateContactsDetails.address}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/margin_32"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="@dimen/margin_normal"-->
+<!--                        android:paddingTop="18dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactPersonContactNumberPrimaryCodeEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:text="@={member.phoneCountryCode}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:id="@+id/contactPersonContactNumberPrimaryTextLayout"-->
+<!--                        android:layout_width="435dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:layout_marginEnd="@dimen/margin_32"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:paddingTop="14dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactPersonContactNumberPrimaryEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:hint="@string/registration_contact_contact_phone_number_1"-->
+<!--                            android:inputType="number"-->
+<!--                            android:maxLength="9"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@={member.body.alternateContactsDetails.phone_preferred}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/enum_hint_color"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/margin_32"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="@dimen/margin_normal"-->
+<!--                        android:paddingTop="18dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactPersonContactNumberSecondryCodeEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@={member.phoneCountryCode}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:id="@+id/contactPersonContactNumberSecondryTextLayout"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/margin_24"-->
+<!--                        android:layout_marginEnd="@dimen/margin_32"-->
+<!--                        android:background="@drawable/ic_input_field_text"-->
+<!--                        android:gravity="start"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:paddingTop="14dp"-->
+<!--                        android:paddingEnd="@dimen/margin_normal"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/contactPersonContactNumberSecondryEditText"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="4dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:enabled="false"-->
+<!--                            android:gravity="center_vertical|start"-->
+<!--                            android:hint="@string/registration_contact_contact_phone_number_2_optional"-->
+<!--                            android:inputType="number"-->
+<!--                            android:maxLength="9"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:text="@={member.body.alternateContactsDetails.phone_alternate}"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textColorHint="@color/enum_hint_color"-->
+<!--                            android:textSize="@dimen/default_font_size"-->
+<!--                            android:translationY="3dp" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/contactPersonEmailTextLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/margin_32"-->
+<!--                    android:layout_marginTop="@dimen/margin_24"-->
+<!--                    android:layout_marginEnd="@dimen/margin_32"-->
+<!--                    android:layout_marginBottom="@dimen/margin_32"-->
+<!--                    android:background="@drawable/ic_input_field_text"-->
+<!--                    android:gravity="start"-->
+<!--                    android:paddingStart="@dimen/margin_normal"-->
+<!--                    android:paddingTop="14dp"-->
+<!--                    android:paddingEnd="@dimen/margin_normal"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:textColorHint="@color/enum_hint_color"-->
+<!--                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/contactPersonEmailEditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:enabled="false"-->
+<!--                        android:gravity="center_vertical|start"-->
+<!--                        android:hint="@string/registration_e_mail_address"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:singleLine="true"-->
+<!--                        android:text="@={member.body.alternateContactsDetails.email}"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textColorHint="@color/enum_hint_color"-->
+<!--                        android:textSize="@dimen/default_font_size"-->
+<!--                        android:translationY="3dp" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:id="@+id/bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@drawable/ic_bottom_background"
+                android:gravity="center_vertical">
+
+
+                <TextView
+                    android:id="@+id/previousButton"
+                    android:layout_width="@dimen/height_60"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:background="@color/transparent"
+                    android:drawableStart="@drawable/ic_bottom_previous_arrow"
+                    android:foregroundGravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/margin_32"
+                    android:background="@color/transparent"
+                    android:drawableEnd="@drawable/ic_bottom_next_arrow"
+                    android:drawablePadding="@dimen/margin_normal"
+                    android:fontFamily="@font/roboto_bold"
+                    android:foregroundGravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/next"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/default_font_size" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

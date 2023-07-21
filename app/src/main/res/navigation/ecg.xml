@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/scanBarcodeFragment">
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.ecg.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/ecg_scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_guideMainFragment"
+            app:clearTask="true"
+            app:destination="@id/guideMainFragment"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_manualScanFragment"
+            app:destination="@id/manualScanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualScanFragment"
+        android:name="org.southasia.ghru.ui.ecg.manualentry.ManualEntryECGFragment"
+        android:label="ManualScanFragment"
+        tools:layout="@layout/ecg_manual_barcode_fragment">
+
+        <action
+            android:id="@+id/action_manualScanFragment_to_guideMainFragment"
+            app:clearTask="true"
+            app:destination="@id/guideMainFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyIDFragment"
+        android:name="org.southasia.ghru.ui.ecg.verifyid.ECGVerifyIDFragment"
+        android:label="VerifyIDFragment"
+        tools:layout="@layout/verify_id_fragment">
+        <action
+            android:id="@+id/action_verifyIDFragment_to_guideMainFragment"
+            app:destination="@id/guideMainFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/guideMainFragment"
+        android:name="org.southasia.ghru.ui.ecg.guide.main.GuideMainFragment"
+        android:label="GuideMainFragment"
+        tools:layout="@layout/guide_main_fragment">
+
+        <action
+            android:id="@+id/action_guideMainFragment_to_InputFragment"
+            app:destination="@id/inputFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="org.southasia.ghru.ui.ecg.main.InputFragment"
+        android:label="InputFragment"
+        tools:layout="@layout/input_fragment">
+
+        <action
+            android:id="@+id/action_inputFragment_to_traceFragment"
+            app:destination="@id/traceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/traceFragment"
+        android:name="org.southasia.ghru.ui.ecg.trace.TraceFragment"
+        android:label="TraceFragment"
+        tools:layout="@layout/trace_fragment">
+
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/spiro_lab"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/scanBarcodeFragment">
+
+
+    <fragment
+            android:id="@+id/CheckListFragment"
+            android:name="org.southasia.ghru.ui.spirometry.checklist.CheckListFragment"
+            android:label="ScanBarcodeFragment"
+            tools:layout="@layout/spiro_check_list_fragment">
+
+        <action android:id="@+id/action_CheckListFragment_to_guideMainFragment"
+                app:destination="@id/guideMainFragment"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.spirometry.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/spirometry_scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_manualScanFragment"
+            app:destination="@id/manualScanFragment" />
+        <action android:id="@+id/action_scanBarcodeFragment_to_CheckListFragment"
+                app:destination="@id/CheckListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualScanFragment"
+        android:name="org.southasia.ghru.ui.spirometry.manualentry.ManualEntrySpirometryFragment"
+        android:label="ManualScanFragment"
+        tools:layout="@layout/spirometry_manual_barcode_entry_fragment">
+        <action android:id="@+id/action_manualScanFragment_to_CheckListFragment"
+                app:destination="@id/CheckListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyIDFragment"
+        android:name="org.southasia.ghru.ui.spirometry.verifyid.SpirometryVerifyIDFragment"
+        android:label="VerifyIDFragment"
+        tools:layout="@layout/spirometry_id_fragment">
+        <action
+            android:id="@+id/action_verifyIDFragment_to_guideMainFragment"
+            app:destination="@id/guideMainFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/guideMainFragment"
+        android:name="org.southasia.ghru.ui.spirometry.guide.GuideMainFragment"
+        android:label="GuideMainFragment"
+        tools:layout="@layout/spirometry_guide_main_fragment">
+
+        <action
+            android:id="@+id/action_guideMainFragment_to_TestsFragment"
+            app:destination="@id/testsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/testsFragment"
+        android:name="org.southasia.ghru.ui.spirometry.tests.TestFragment"
+        android:label="TestsFragment"
+        tools:layout="@layout/spirometry_tests_fragment">
+
+        <action
+            android:id="@+id/action_testFragment_to_recordFragment"
+            app:destination="@id/recordTestFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recordTestFragment"
+        android:name="org.southasia.ghru.ui.spirometry.record.RecordTestFragment"
+        android:label="RecordTestFragment"
+        tools:layout="@layout/spirometry_record_test_fragment">
+
+
+    </fragment><action android:id="@+id/action_global_CheckListFragment" app:destination="@id/CheckListFragment" app:clearTask="true"/>
+
+</navigation>

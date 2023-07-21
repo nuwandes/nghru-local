@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="radioGroupAboveValue"
+            type="Boolean" />
+
+        <variable
+            name="radioGroupResidentValue"
+            type="Boolean" />
+
+        <variable
+            name="radioGroupNationalIDValue"
+            type="Boolean" />
+
+        <variable
+            name="radioGroupMedicationsValue"
+            type="Boolean" />
+
+        <variable
+            name="radioGroupFastValue"
+            type="Boolean" />
+
+        <variable
+            name="radioGroupFastDurationValue"
+            type="Boolean" />
+
+        <variable
+            name="radioGroupFastDurationMinValue"
+            type="Boolean" />
+
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:context="org.southasia.ghru.SettingActivity"
+        tools:ignore="MergeRootFrame">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@string/registration_preregistration_title"
+                app:titleTextColor="@color/white" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_24">
+
+
+                    <TextView
+                        android:id="@+id/textViewAbove"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_preregistration_age"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupAbove"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yes"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:layout_marginEnd="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_yes"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_no"
+                            android:textSize="20sp" />
+
+                    </RadioGroup>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        visibleGone="@{safeUnbox(radioGroupAboveValue)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:background="@color/error_banner_color"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/textView19ss"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|start"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/registration_preregistration_underage"
+                            android:textColor="#DE000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/buttonBackToHomeFive"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/buttonBackToHomeFive"
+                            android:layout_width="176dp"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/radio_button_selected_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_button_back_to_home"
+                            android:textColor="@color/defult_blue"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textView19ss"
+                            app:layout_constraintTop_toTopOf="parent" android:layout_alignParentEnd="true"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:background="@color/separator_gray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_24">
+
+
+                    <TextView
+                        android:id="@+id/textViewResident"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_preregistration_resident"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupResident"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yesresident"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:layout_marginEnd="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_yes"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/noresident"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_no"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        visibleGone="@{safeUnbox(radioGroupResidentValue)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:background="@color/error_banner_color"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/textView132"
+                            android:layout_width="304dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|start"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/registration_preregistration_underage"
+                            android:textColor="#DE000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"   app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/buttonBackToHomeThree"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <Button
+                            android:id="@+id/buttonBackToHomeThree"
+                            android:layout_width="176dp"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginTop="@dimen/margin_normal"
+                            android:layout_marginEnd="@dimen/margin_24"
+                            android:layout_marginBottom="@dimen/margin_normal"
+
+                            android:background="@drawable/radio_button_selected_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_button_back_to_home"
+                            android:textColor="@color/defult_blue"
+                            android:textSize="16sp"   app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/textView132"
+                            app:layout_constraintTop_toTopOf="parent" android:layout_alignParentEnd="true"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:background="@color/separator_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_24">
+
+
+                    <TextView
+                        android:id="@+id/textViewFast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_preregistration_fasting"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupFast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yesfast"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:layout_marginEnd="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_yes"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/nofast"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_no"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        visibleGone="@{safeUnbox(radioGroupFastDurationValue)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:text="@string/registration_preregistration_fasting_question" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/durationTextLayout"
+                                android:layout_width="210dp"
+                                android:layout_height="@dimen/bp_text_width"
+                                android:layout_marginTop="@dimen/margin_normal"
+                                android:layout_marginBottom="@dimen/margin_normal"
+                                android:background="@drawable/ic_input_field_text"
+                                android:gravity="start"
+                                android:paddingStart="@dimen/margin_normal"
+                                android:paddingTop="14dp"
+                                android:paddingEnd="@dimen/margin_normal"
+                                android:textAlignment="viewStart"
+                                android:textColorHint="@color/enum_hint_color"
+                                app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/durationEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:background="@color/transparent"
+                                    android:gravity="center_vertical|start"
+                                    android:hint="@string/registration_preregistration_fasting_duration"
+                                    android:inputType="number"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/enum_hint_color"
+                                    android:textSize="@dimen/default_font_size"
+                                    android:translationY="3dp"
+                                    app:validateEmpty="@{true}"
+                                    app:validateMaxLength="@{5}"
+                                    app:validateMinLength="@{2}"
+                                    app:validateRegex='@{"^(?!\\s)^([a-zA-Z0-9 !-~]){1,}$"}'/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_normal"
+                                android:text="@string/hours"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/ic_height"
+                                app:layout_constraintStart_toEndOf="@+id/heightTextLayout"
+                                app:layout_constraintTop_toTopOf="@+id/ic_height" />
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            visibleGone="@{safeUnbox(radioGroupFastDurationMinValue)}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:background="@color/error_banner_color" android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|start"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="16dp"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/registration_preregistration_fasting_fail"
+                                android:textColor="#DE000000"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/buttonBackToHomeSix"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/buttonBackToHomeSix"
+                                android:layout_width="176dp"
+                                android:layout_height="@dimen/icon_size"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="@drawable/radio_button_selected_bg"
+                                android:button="@android:color/transparent"
+                                android:gravity="center"
+                                android:text="@string/app_button_back_to_home"
+                                android:textColor="@color/defult_blue"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/textView19"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        visibleGone="@{safeUnbox(radioGroupFastValue)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:background="@color/error_banner_color"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="304dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|start"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/registration_preregistration_fasting_fail"
+                            android:textColor="#DE000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/buttonBackToHomeFour"
+                            android:layout_width="176dp"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginTop="@dimen/margin_normal"
+                            android:layout_marginEnd="@dimen/margin_24"
+                            android:layout_marginBottom="@dimen/margin_normal"
+
+                            android:background="@drawable/radio_button_selected_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_button_back_to_home"
+                            android:textColor="@color/defult_blue"
+                            android:textSize="16sp" />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:background="@color/separator_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_24">
+
+
+                    <TextView
+                        android:id="@+id/textViewNationalID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_preregistration_nid"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupNationalID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yesNational"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:layout_marginEnd="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_yes"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/noNational"
+                            android:layout_width="@dimen/height_260"
+                            android:layout_height="56dp"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_no"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        visibleGone="@{safeUnbox(radioGroupNationalIDValue)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:background="@color/error_banner_color"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/dede"
+                            android:layout_width="304dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|start"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/registration_preregistration_underage"
+                            android:textColor="#DE000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/buttonBackToHomeOne"
+                            android:layout_width="176dp"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginTop="@dimen/margin_normal"
+                            android:layout_marginEnd="@dimen/margin_24"
+                            android:layout_marginBottom="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selected_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_button_back_to_home"
+                            android:textColor="@color/defult_blue"
+                            android:textSize="16sp" app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/dede"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:background="@color/separator_gray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_24">
+
+
+                    <TextView
+                        android:id="@+id/textViewMedications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/registration_preregistration_medication"
+                        android:textColor="#DE000000"
+                        android:textSize="@dimen/default_font_size"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupMedications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yesmedications"
+                            android:layout_width="165dp"
+                            android:layout_height="56dp"
+                            android:layout_marginEnd="@dimen/margin_normal"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_yes"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/nomedications"
+                            android:layout_width="165dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_no"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/notApplicableMedications"
+                            android:layout_width="165dp"
+                            android:layout_height="56dp"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:background="@drawable/radio_button_selector"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/n_a"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        visibleGone="@{safeUnbox(radioGroupMedicationsValue)}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_24"
+                        android:background="@color/error_banner_color"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/cecfe3c"
+                            android:layout_width="304dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|start"
+                            android:layout_marginStart="@dimen/margin_24"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/registration_preregistration_underage"
+                            android:textColor="#DE000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/buttonBackToHomeTwo"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <Button
+                            android:id="@+id/buttonBackToHomeTwo"
+                            android:layout_width="176dp"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginTop="@dimen/margin_normal"
+                            android:layout_marginEnd="@dimen/margin_24"
+                            android:layout_marginBottom="@dimen/margin_normal"
+
+                            android:background="@drawable/radio_button_selected_bg"
+                            android:button="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@string/app_button_back_to_home"
+                            android:textColor="@color/defult_blue"
+                            android:textSize="16sp" app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/cecfe3c"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/separator_gray" />
+
+                <Button
+
+                    android:id="@+id/buttonSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginEnd="@dimen/margin_24"
+                    android:layout_marginBottom="@dimen/margin_24"
+                    android:background="@drawable/ic_button_fill_primary"
+                    android:drawableEnd="@drawable/ic_arrow_back"
+                    android:drawablePadding="@dimen/margin_24"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/margin_24"
+                    android:text="@string/app_continue"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_font_size" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

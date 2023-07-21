@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/scanBarcodeFragment">
+
+
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.scanbarcode.ScanBarcodeFragment"
+        android:label="ScanBarcodeFragment"
+        tools:layout="@layout/scan_barcode_patient_fragment">
+
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_verifyIDFragmentzz"
+            app:clearTask="true"
+            app:destination="@id/fastedFragment"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_manualScanFragment"
+            app:destination="@id/manualParticipent" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualParticipent"
+        android:name="org.southasia.ghru.ui.samplecollection.manualentry.ManualEntrySampleCollectionFragment"
+        android:label="ManualEntrySampleCollectionFragment"
+        tools:layout="@layout/samplecollection_manual_barcode_fragment">
+        <action
+            android:id="@+id/action_manualParticipent_to_verifyIDFragment"
+            app:clearTask="true"
+            app:destination="@id/fastedFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyIDFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.verifyid.VerifyIDFragment"
+        android:label="VerifyIDFragment"
+        tools:layout="@layout/samplecollection_verify_id_fragment">
+
+        <action
+            android:id="@+id/action_verifyIDFragment_to_fastedFragment"
+            app:destination="@id/fastedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fastFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.fast.FastFragment"
+        android:label="FastFragment"
+        tools:layout="@layout/fast_fragment">
+        <action
+            android:id="@+id/action_fastFragment_to_fastedFragment"
+            app:destination="@id/fastedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fastedFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.fasted.FastedFragment"
+        android:label="FastedFragment"
+        tools:layout="@layout/fasted_fragment">
+        <action
+            android:id="@+id/action_fastedFragment_to_bagScanBarcodeFragment"
+            app:destination="@id/bagScanBarcodeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bagScanBarcodeFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.bagscanbarcode.BagScanBarcodeFragment"
+        android:label="FastedFragment"
+        tools:layout="@layout/bag_scan_barcode_fragment">
+
+        <action
+            android:id="@+id/action_bagScanBarcodeFragment_to_bagScannedFragment"
+            app:destination="@id/bagScannedFragment" app:clearTask="true"/>
+
+        <action
+            android:id="@+id/action_bagScanBarcodeFragment_to_maualBagScannedFragment"
+            app:destination="@id/manualBagScannedFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/manualBagScannedFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.manualentry.ManualEntrySampleBagBarcodeFragment"
+        android:label="ManualEntrySampleBagBarcodeFragment"
+        tools:layout="@layout/samplecollection_manual_bag_barcode_fragment">
+
+        <action
+            android:id="@+id/action_manualBagScanBarcodeFragment_to_bagScannedFragment"
+            app:destination="@id/bagScannedFragment" app:clearTask="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/bagScannedFragment"
+        android:name="org.southasia.ghru.ui.samplecollection.bagscanned.BagScannedFragment"
+        android:label="BagScannedFragment"
+        tools:layout="@layout/bag_scanned_fragment"></fragment>
+
+
+</navigation>
+
